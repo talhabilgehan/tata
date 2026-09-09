@@ -1,32 +1,32 @@
-export default async function handler(req, res) {
-  const M3U_URL = process.env.M3U_URL;
+import fs from "fs";
+import path from "path";
 
-  const text = await fetch(M3U_URL).then(r => r.text());
+export default function handler(req, res) {
+  const { id } = req.query;
 
-  const lines = text.split("\n");
+  const m3u = fs.readFileSync(path.join(process.cwd(), "tata.m3u"), "utf8");
+  const blocks = m3u.split("#EXTINF");
 
-  const id = req.query.id;
+  let url = "";
 
-  let info = "";
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-
-    if (line.startsWith("#EXTINF")) {
-      info = line;
-      continue;
+  for (const block of blocks) {
+    if (id === "tata-trt1" && block.includes("TRT 1")) {
+      url = block.trim().split("\n").pop();
+      break;
     }
-
-    if (!line.startsWith("http")) continue;
-
-    const name = info.split(",").pop().trim();
-
-    if (name === id) {
-      return res.json({
-        streams: [{ url: line.trim() }]
-      });
+    if (id === "tata-atv" && block.includes("ATV")) {
+      url = block.trim().split("\n").pop();
+      break;
+    }
+    if (id === "tata-kanald" && block.includes("KANAL D")) {
+      url = block.trim().split("\n").pop();
+      break;
     }
   }
 
-  res.json({ streams: [] });
+  res.setHeader("Content-Type", "application/json");
+
+  res.status(200).json({
+    streams: [{ url }]
+  });
 }
