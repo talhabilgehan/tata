@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 export default function handler(req, res) {
-  const { id } = req.query;
+  const id = String(req.query.id).replace(".json", "");
 
   const text = fs.readFileSync(
     path.join(process.cwd(), "tata.m3u"),
