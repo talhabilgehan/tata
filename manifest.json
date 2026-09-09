@@ -1,0 +1,14 @@
+{
+  "id": "talhabilgehan.tata.tv",
+  "version": "1.0.0",
+  "name": "TATA TV",
+  "resources": ["catalog"],
+  "types": ["tv"],
+  "catalogs": [
+    { "type": "tv", "id": "ulusal", "name": "📺 Ulusal" },
+    { "type": "tv", "id": "haber", "name": "📰 Haber" },
+    { "type": "tv", "id": "spor", "name": "⚽ Spor" },
+    { "type": "tv", "id": "belgesel", "name": "🌍 Belgesel" },
+    { "type": "tv", "id": "cocuk", "name": "👶 Çocuk" }
+  ]
+}
