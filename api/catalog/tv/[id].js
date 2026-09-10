@@ -43,7 +43,12 @@ export default async function handler(req, res) {
   const metas = channels
     .filter(c => GROUPS[id]?.some(g => c.group.includes(g)))
     .map(c => ({
-      id: `tv-${encodeURIComponent(c.name)}`,
+      id: `tv-${c.name
+  .toLowerCase()
+  .normalize("NFD")
+  .replace(/[\u0300-\u036f]/g, "")
+  .replace(/[^a-z0-9]+/g, "-")
+  .replace(/^-|-$/g, "")}`,
       type: "tv",
       name: c.name,
       poster: c.logo,
