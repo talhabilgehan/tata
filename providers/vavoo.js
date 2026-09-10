@@ -1,4 +1,5 @@
 const https = require("https");
+const cache = require("./cache");
 
 const BASE = "https://tvvoo.hayd.uk";
 
@@ -52,6 +53,13 @@ async function loadCatalog() {
 }
 
 async function resolveVavoo(channelName) {
+
+  const cached = cache.get(channelName);
+
+  if (cached) {
+    return cached;
+  }
+
   await loadCatalog();
 
   const aliases = [
@@ -64,6 +72,7 @@ async function resolveVavoo(channelName) {
   ];
 
   for (const candidate of aliases) {
+
     const id = channelMap.get(normalize(candidate));
 
     if (!id) continue;
@@ -71,7 +80,12 @@ async function resolveVavoo(channelName) {
     const data = await getJSON(`${BASE}/stream/tv/${id}.json`);
 
     if (data.streams?.length) {
-      return data.streams[0].url;
+
+      const url = data.streams[0].url;
+
+      cache.set(channelName, url);
+
+      return url;
     }
   }
 
