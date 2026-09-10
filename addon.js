@@ -14,7 +14,6 @@ const PORT = process.env.PORT || 7000;
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
-// M3U'yu başlangıçta belleğe al
 loadM3U();
 
 function absoluteLogo(req, logo) {
@@ -50,7 +49,6 @@ app.get("/manifest.json", (req, res) => {
   });
 });
 
-// Kategori eşlemesi
 const catalogMap = {
   ulusal: "Ulusal",
   spor: "Spor",
@@ -70,7 +68,9 @@ app.get("/catalog/tv/:id.json", (req, res) => {
     id: `tv-${channel.id}`,
     type: "tv",
     name: channel.name,
-    logo: absoluteLogo(req, channel.logo)
+    poster: absoluteLogo(req, channel.logo),
+    logo: absoluteLogo(req, channel.logo),
+    posterShape: "square"
   }));
 
   res.json({ metas });
@@ -92,7 +92,9 @@ app.get("/meta/tv/:id.json", (req, res) => {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-      logo: absoluteLogo(req, channel.logo)
+      poster: absoluteLogo(req, channel.logo),
+      logo: absoluteLogo(req, channel.logo),
+      posterShape: "square"
     }
   });
 });
@@ -118,7 +120,6 @@ app.get("/stream/tv/:id.json", (req, res) => {
   });
 });
 
-// Ana sayfa
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
 });
