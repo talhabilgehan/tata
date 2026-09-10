@@ -1,40 +1,38 @@
-export default async function handler(req,res){
+const fs = require("fs");
+const path = require("path");
 
-const M3U=process.env.M3U_URL;
+function parseM3U() {
+  const file = fs.readFileSync(path.join(process.cwd(), "tata.m3u"), "utf8");
+  const lines = file.split(/\r?\n/);
 
-const txt=await fetch(M3U).then(r=>r.text());
+  const channels = [];
+  let current = null;
 
-const lines=txt.split("\n");
+  for (const line of lines) {
+    if (line.startsWith("#EXTINF")) {
+      current = {
+        name: line.match(/,(.*)$/)?.[1]?.trim() || "Kanal"
+      };
+    } else if (current && line.startsWith("http")) {
+      current.url = line.trim();
+      channels.push(current);
+      current = null;
+    }
+  }
 
-const id=decodeURIComponent((req.query.id||"").replace("tv-",""));
-
-let info="";
-
-for(let i=0;i<lines.length;i++){
-
-const line=lines[i];
-
-if(line.startsWith("#EXTINF")){
-info=line;
-continue;
+  return channels;
 }
 
-if(!line.startsWith("http")) continue;
+module.exports = (req, res) => {
+  const id = decodeURIComponent(req.query.id.replace(/^tv-/, ""));
 
-const name=info.split(",").pop().trim();
+  const channel = parseM3U().find((c) => c.name === id);
 
-if(name===id){
+  res.setHeader("Content-Type", "application/json");
 
-return res.json({
-streams:[
-{url:line.trim()}
-]
-});
+  if (!channel) return res.json({ streams: [] });
 
-}
-
-}
-
-res.json({streams:[]});
-
-}
+  res.json({
+    streams: [{ url: channel.url }]
+  });
+};
