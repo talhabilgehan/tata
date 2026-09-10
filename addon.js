@@ -9,6 +9,9 @@ const {
   loadM3U
 } = require("./parse-m3u");
 
+const { resolveVavoo } = require("./providers/vavoo");
+const { isHealthy } = require("./providers/health");
+
 const app = express();
 const PORT = process.env.PORT || 7000;
 
@@ -48,7 +51,7 @@ app.get("/manifest.json", (req, res) => {
 
   res.json({
     id: "tata.live",
-    version: "1.0.0",
+    version: "1.1.0",
     name: "TATA",
     description: "Premium Live TV",
 
@@ -94,13 +97,8 @@ app.get("/catalog/tv/:id.json", (req, res) => {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-
-      // Ana sayfa kartı
       poster: absolute(req, assets.poster),
-
-      // Üst banner ve yükleme ekranı
       logo: absolute(req, assets.logo),
-
       posterShape: "square"
     };
   });
@@ -127,8 +125,6 @@ app.get("/meta/tv/:id.json", (req, res) => {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-
-      // Detay sayfasında sadece clear logo
       logo: absolute(req, assets.logo)
     }
   });
@@ -136,7 +132,7 @@ app.get("/meta/tv/:id.json", (req, res) => {
 
 // ================= STREAM =================
 
-app.get("/stream/tv/:id.json", (req, res) => {
+app.get("/stream/tv/:id.json", async (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
   const id = req.params.id.replace(/^tv-/, "");
@@ -146,11 +142,29 @@ app.get("/stream/tv/:id.json", (req, res) => {
     return res.json({ streams: [] });
   }
 
+  let streamUrl = channel.stream;
+  let source = "TATA";
+
+  try {
+    const healthy = await isHealthy(streamUrl);
+
+    if (!healthy) {
+      const vavooUrl = await resolveVavoo(channel.name);
+
+      if (vavooUrl) {
+        streamUrl = vavooUrl;
+        source = "VAVOO";
+      }
+    }
+  } catch (err) {
+    console.log(`[Fallback] ${channel.name}: ${err.message}`);
+  }
+
   res.json({
     streams: [
       {
-        title: channel.name,
-        url: channel.stream
+        title: `${channel.name} • ${source}`,
+        url: streamUrl
       }
     ]
   });
