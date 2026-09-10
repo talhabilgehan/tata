@@ -2,5 +2,15 @@
   "id": "tata.live",
   "version": "1.0.0",
   "name": "TATA",
-  "description": "Premium Live TV"
+  "description": "Premium Live TV",
+  "resources": ["catalog", "stream"],
+  "types": ["tv"],
+  "idPrefixes": ["tv-"],
+  "catalogs": [
+    { "type": "tv", "id": "ulusal", "name": "Ulusal" },
+    { "type": "tv", "id": "spor", "name": "Spor" },
+    { "type": "tv", "id": "haber", "name": "Haber" },
+    { "type": "tv", "id": "belgesel", "name": "Belgesel" },
+    { "type": "tv", "id": "cocuk", "name": "Çocuk" }
+  ]
 }
