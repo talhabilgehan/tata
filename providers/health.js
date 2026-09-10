@@ -1,29 +1,59 @@
+const http = require("http");
 const https = require("https");
 
-async function isHealthy(url) {
-  if (!url) return false;
+const TIMEOUT = 3000;
 
+function request(url, method) {
   return new Promise((resolve) => {
-    const req = https.get(url, { timeout: 10000 }, (res) => {
-      let body = "";
 
-      res.on("data", (chunk) => (body += chunk));
+    try {
+      const client = url.startsWith("https") ? https : http;
 
-      res.on("end", () => {
-        resolve(
-          res.statusCode === 200 &&
-          body.includes("#EXTM3U")
-        );
+      const req = client.request(url, {
+        method,
+        timeout: TIMEOUT,
+        headers: {
+          "User-Agent": "Mozilla/5.0"
+        }
+      }, (res) => {
+
+        const ok = res.statusCode >= 200 && res.statusCode < 400;
+
+        res.destroy();
+
+        resolve(ok);
+
       });
-    });
 
-    req.on("error", () => resolve(false));
+      req.on("timeout", () => {
+        req.destroy();
+        resolve(false);
+      });
 
-    req.on("timeout", () => {
-      req.destroy();
+      req.on("error", () => {
+        resolve(false);
+      });
+
+      req.end();
+
+    } catch {
       resolve(false);
-    });
+    }
+
   });
 }
 
-module.exports = { isHealthy };
+async function isHealthy(url) {
+
+  if (!url) return false;
+
+  const head = await request(url, "HEAD");
+
+  if (head) return true;
+
+  return request(url, "GET");
+}
+
+module.exports = {
+  isHealthy
+};
