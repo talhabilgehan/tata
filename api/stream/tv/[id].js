@@ -1,38 +1,30 @@
-const fs = require("fs");
-const path = require("path");
+const RAW="https://raw.githubusercontent.com/talhabilgehan/tata/main/tata.m3u";
 
-function parseM3U() {
-  const file = fs.readFileSync(path.join(process.cwd(), "tata.m3u"), "utf8");
-  const lines = file.split(/\r?\n/);
+function parseM3U(text){
+  const lines=text.split(/\r?\n/);
+  const out=[];
+  let c=null;
 
-  const channels = [];
-  let current = null;
-
-  for (const line of lines) {
-    if (line.startsWith("#EXTINF")) {
-      current = {
-        name: line.match(/,(.*)$/)?.[1]?.trim() || "Kanal"
-      };
-    } else if (current && line.startsWith("http")) {
-      current.url = line.trim();
-      channels.push(current);
-      current = null;
+  for(const line of lines){
+    if(line.startsWith("#EXTINF")){
+      c={name:line.match(/,(.*)$/)?.[1]?.trim()||""};
+    }else if(c && line.startsWith("http")){
+      c.url=line.trim();
+      out.push(c);
+      c=null;
     }
   }
-
-  return channels;
+  return out;
 }
 
-module.exports = (req, res) => {
-  const id = decodeURIComponent(req.query.id.replace(/^tv-/, ""));
+module.exports=async(req,res)=>{
+  const txt=await fetch(RAW).then(r=>r.text());
+  const channels=parseM3U(txt);
 
-  const channel = parseM3U().find((c) => c.name === id);
+  const name=decodeURIComponent(req.query.id.replace(/^tv-/,""));
+  const ch=channels.find(x=>x.name===name);
 
-  res.setHeader("Content-Type", "application/json");
-
-  if (!channel) return res.json({ streams: [] });
-
-  res.json({
-    streams: [{ url: channel.url }]
+  res.status(200).json({
+    streams: ch ? [{url:ch.url}] : []
   });
 };
