@@ -4,86 +4,94 @@ const cache = require("./cache");
 const BASE = "https://tvvoo.hayd.uk";
 
 const channelMap = new Map();
-let loaded = false;
+let catalogLoaded = false;
 
 function getJSON(url) {
   return new Promise((resolve, reject) => {
-    https.get(url, { timeout: 10000 }, (res) => {
-      let data = "";
+    const req = https.get(url, { timeout: 10000 }, (res) => {
 
-      res.on("data", (chunk) => (data += chunk));
+      let body = "";
+
+      res.on("data", chunk => body += chunk);
 
       res.on("end", () => {
         try {
-          resolve(JSON.parse(data));
-        } catch (e) {
-          reject(e);
+          resolve(JSON.parse(body));
+        } catch {
+          reject(new Error("Invalid JSON"));
         }
       });
-    }).on("error", reject);
+
+    });
+
+    req.on("error", reject);
+
+    req.on("timeout", () => {
+      req.destroy();
+      reject(new Error("Timeout"));
+    });
   });
 }
 
-function normalize(name) {
-  return name
+function normalize(text) {
+  return text
     .toLowerCase()
-    .replace(/ı/g, "i")
-    .replace(/İ/g, "i")
-    .replace(/ş/g, "s")
-    .replace(/ç/g, "c")
-    .replace(/ğ/g, "g")
-    .replace(/ü/g, "u")
-    .replace(/ö/g, "o")
-    .replace(/&/g, "and")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
     .replace(/[^\w\s]/g, "")
     .replace(/\s+/g, " ")
     .trim();
 }
 
 async function loadCatalog() {
-  if (loaded) return;
+
+  if (catalogLoaded) return;
 
   const data = await getJSON(`${BASE}/catalog/tv/vavoo_tv_tr.json`);
 
-  for (const ch of data.metas || []) {
+  const metas = Array.isArray(data.metas) ? data.metas : [];
+
+  for (const ch of metas) {
     channelMap.set(normalize(ch.name), ch.id);
   }
 
-  loaded = true;
+  catalogLoaded = true;
 }
 
-async function resolveVavoo(channelName) {
+function aliases(name){
 
-  const cached = cache.get(channelName);
+  return [
+    name,
+    name.replace(/^NOW$/i,"FOX"),
+    name.replace(/^FOX$/i,"NOW"),
+    name.replace("CNN TÜRK","CNN TURK"),
+    name.replace("TRT-1","TRT 1"),
+    name.replace("A TV","ATV"),
+    name.replace("TV 8","TV8")
+  ];
+}
 
-  if (cached) {
-    return cached;
-  }
+async function resolveVavoo(name){
+
+  const cached = cache.get(name);
+
+  if(cached) return cached;
 
   await loadCatalog();
 
-  const aliases = [
-    channelName,
-    channelName.replace("NOW", "FOX"),
-    channelName.replace("FOX", "NOW"),
-    channelName.replace("CNN TÜRK", "CNN TURK"),
-    channelName.replace("A TV", "ATV"),
-    channelName.replace("TRT-1", "TRT 1")
-  ];
-
-  for (const candidate of aliases) {
+  for(const candidate of aliases(name)){
 
     const id = channelMap.get(normalize(candidate));
 
-    if (!id) continue;
+    if(!id) continue;
 
     const data = await getJSON(`${BASE}/stream/tv/${id}.json`);
 
-    if (data.streams?.length) {
+    if(data.streams?.length){
 
       const url = data.streams[0].url;
 
-      cache.set(channelName, url);
+      cache.set(name,url);
 
       return url;
     }
