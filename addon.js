@@ -28,12 +28,14 @@ function assetPaths(name) {
   const hasClear = fs.existsSync(clearFile);
 
   return {
-    poster: `/posters/${encoded}.png`,
+    poster: `/logos/${encoded}.png`,
     logo: hasClear
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
   };
 }
+
+// ================= MANIFEST =================
 
 app.get("/manifest.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
@@ -63,6 +65,8 @@ app.get("/manifest.json", (req, res) => {
   });
 });
 
+// ================= CATALOG =================
+
 const catalogMap = {
   ulusal: "Ulusal",
   spor: "Spor",
@@ -71,7 +75,6 @@ const catalogMap = {
   cocuk: "Çocuk"
 };
 
-// Catalog
 app.get("/catalog/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -94,7 +97,8 @@ app.get("/catalog/tv/:id.json", (req, res) => {
   res.json({ metas });
 });
 
-// Meta
+// ================= META =================
+
 app.get("/meta/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -117,7 +121,8 @@ app.get("/meta/tv/:id.json", (req, res) => {
   });
 });
 
-// Stream
+// ================= STREAM =================
+
 app.get("/stream/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -137,6 +142,8 @@ app.get("/stream/tv/:id.json", (req, res) => {
     ]
   });
 });
+
+// ================= HOME =================
 
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
