@@ -2,29 +2,32 @@ const { resolveTata } = require("./tata");
 const { resolveVavoo } = require("./vavoo");
 const { isHealthy } = require("./health");
 
-async function resolveChannel(id, name) {
-  let url = await resolveTata(id);
+async function resolveChannel(id,name){
 
-  if (await isHealthy(url)) {
-    return {
-      source: "TATA",
-      url
+  const tataUrl = await resolveTata(id);
+
+  if(await isHealthy(tataUrl)){
+    return{
+      source:"TATA",
+      stream:{
+        url:tataUrl
+      }
     };
   }
 
   const vavoo = await resolveVavoo(name);
 
-  if (vavoo && await isHealthy(vavoo)) {
-    return {
-      source: "VAVOO",
-      url: vavoo
+  if(vavoo){
+    return{
+      source:"VAVOO",
+      stream:vavoo
     };
   }
 
-  return {
-    source: "OFFLINE",
-    url: null
+  return{
+    source:"OFFLINE",
+    stream:null
   };
 }
 
-module.exports = { resolveChannel };
+module.exports={resolveChannel};
