@@ -14,11 +14,13 @@ const PORT = process.env.PORT || 7000;
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
-// Sunucu açılırken M3U'yu belleğe al
+// M3U'yu başlangıçta belleğe al
 loadM3U();
 
 // Manifest
 app.get("/manifest.json", (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+
   res.json({
     id: "tata.live",
     version: "1.0.0",
@@ -35,7 +37,12 @@ app.get("/manifest.json", (req, res) => {
       { type: "tv", id: "haber", name: "Haber" },
       { type: "tv", id: "belgesel", name: "Belgesel" },
       { type: "tv", id: "cocuk", name: "Çocuk" }
-    ]
+    ],
+
+    behaviorHints: {
+      configurable: false,
+      configurationRequired: false
+    }
   });
 });
 
@@ -50,6 +57,8 @@ const catalogMap = {
 
 // Catalog
 app.get("/catalog/tv/:id.json", (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+
   const groupName = catalogMap[req.params.id];
   const groups = getGroups();
 
