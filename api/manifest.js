@@ -1,11 +1,15 @@
 export default function handler(req, res) {
+  res.setHeader("Content-Type", "application/json");
+
   res.status(200).json({
     id: "tata.live",
     version: "1.0.0",
     name: "TATA",
     description: "Premium Live TV",
+
     resources: ["catalog", "stream"],
     types: ["tv"],
+
     catalogs: [
       { type: "tv", id: "ulusal", name: "Ulusal" },
       { type: "tv", id: "spor", name: "Spor" },
