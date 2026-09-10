@@ -39,37 +39,26 @@ function assetPaths(name) {
   };
 }
 
-/* ================= MANIFEST ================= */
-
 app.get("/manifest.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
   res.json({
     id: "tata.live",
-    version: "2.0.0",
+    version: "2.1.0",
     name: "TATA",
     description: "Premium Live TV",
-
     resources: ["catalog", "meta", "stream"],
     types: ["tv"],
     idPrefixes: ["tv-"],
-
     catalogs: [
       { type: "tv", id: "ulusal", name: "Ulusal" },
       { type: "tv", id: "spor", name: "Spor" },
       { type: "tv", id: "haber", name: "Haber" },
       { type: "tv", id: "belgesel", name: "Belgesel" },
       { type: "tv", id: "cocuk", name: "Çocuk" }
-    ],
-
-    behaviorHints: {
-      configurable: false,
-      configurationRequired: false
-    }
+    ]
   });
 });
-
-/* ================= CATALOG ================= */
 
 const catalogMap = {
   ulusal: "Ulusal",
@@ -80,8 +69,6 @@ const catalogMap = {
 };
 
 app.get("/catalog/tv/:id.json", (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
-
   const groups = getGroups();
   const groupName = catalogMap[req.params.id];
 
@@ -101,11 +88,7 @@ app.get("/catalog/tv/:id.json", (req, res) => {
   res.json({ metas });
 });
 
-/* ================= META ================= */
-
 app.get("/meta/tv/:id.json", (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
-
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
 
@@ -125,24 +108,27 @@ app.get("/meta/tv/:id.json", (req, res) => {
   });
 });
 
-/* ================= STREAM ================= */
-
 app.get("/stream/tv/:id.json", async (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
-
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
 
   if (!channel) {
+    console.log(`[MISS] Kanal bulunamadı: ${id}`);
     return res.json({ streams: [] });
   }
+
+  console.log(`\n========== ${channel.name} ==========`);
 
   try {
     const result = await resolveChannel(id, channel.name);
 
     if (!result.stream) {
+      console.log(`[OFFLINE] ${channel.name}`);
       return res.json({ streams: [] });
     }
+
+    console.log(`[SOURCE] ${result.source}`);
+    console.log(`[URL] ${result.stream.url}`);
 
     const stream = {
       ...result.stream,
@@ -154,13 +140,10 @@ app.get("/stream/tv/:id.json", async (req, res) => {
     });
 
   } catch (err) {
-    console.error(`[STREAM ERROR] ${channel.name}`, err.message);
-
+    console.log(`[ERROR] ${channel.name}: ${err.message}`);
     return res.json({ streams: [] });
   }
 });
-
-/* ================= HOME ================= */
 
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
