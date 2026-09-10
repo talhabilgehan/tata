@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const path = require("path");
+const fs = require("fs");
 
 const {
   getGroups,
@@ -16,11 +17,44 @@ app.use(express.static(path.join(__dirname, "public")));
 
 loadM3U();
 
-function absoluteLogo(req, logo) {
-  return `${req.protocol}://${req.get("host")}${logo}`;
+function absolute(req, url) {
+  return `${req.protocol}://${req.get("host")}${url}`;
 }
 
-// Manifest
+function assetPaths(name) {
+  const encoded = encodeURIComponent(name);
+
+  const clearPath = path.join(__dirname, "public", "clearlogos", `${name}.png`);
+  const hasClear = fs.existsSync(clearPath);
+
+  return {
+    poster: `/poster/${encoded}.svg`,
+    logo: hasClear ? `/clearlogos/${encoded}.png` : `/logos/${encoded}.png`
+  };
+}
+
+// ---------------- POSTER ENGINE ----------------
+// 512x512 siyah poster + ortalanmış renkli logo
+
+app.get("/poster/:name.svg", (req, res) => {
+  const name = decodeURIComponent(req.params.name);
+  const encoded = encodeURIComponent(name);
+
+  res.setHeader("Content-Type", "image/svg+xml");
+  res.send(`
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <rect width="512" height="512" fill="#000000"/>
+  <image href="/logos/${encoded}.png"
+         x="72"
+         y="72"
+         width="368"
+         height="368"
+         preserveAspectRatio="xMidYMid meet"/>
+</svg>`);
+});
+
+// ---------------- MANIFEST ----------------
+
 app.get("/manifest.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -49,6 +83,8 @@ app.get("/manifest.json", (req, res) => {
   });
 });
 
+// ---------------- CATALOG ----------------
+
 const catalogMap = {
   ulusal: "Ulusal",
   spor: "Spor",
@@ -57,26 +93,30 @@ const catalogMap = {
   cocuk: "Çocuk"
 };
 
-// Catalog
 app.get("/catalog/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
   const groupName = catalogMap[req.params.id];
   const groups = getGroups();
 
-  const metas = (groups[groupName] || []).map(channel => ({
-    id: `tv-${channel.id}`,
-    type: "tv",
-    name: channel.name,
-    poster: absoluteLogo(req, channel.logo),
-    logo: absoluteLogo(req, channel.logo),
-    posterShape: "square"
-  }));
+  const metas = (groups[groupName] || []).map(channel => {
+    const assets = assetPaths(channel.name);
+
+    return {
+      id: `tv-${channel.id}`,
+      type: "tv",
+      name: channel.name,
+      poster: absolute(req, assets.poster),
+      logo: absolute(req, assets.logo),
+      posterShape: "square"
+    };
+  });
 
   res.json({ metas });
 });
 
-// Meta
+// ---------------- META ----------------
+
 app.get("/meta/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -87,19 +127,20 @@ app.get("/meta/tv/:id.json", (req, res) => {
     return res.status(404).json({ meta: null });
   }
 
+  const assets = assetPaths(channel.name);
+
   res.json({
     meta: {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-      poster: absoluteLogo(req, channel.logo),
-      logo: absoluteLogo(req, channel.logo),
-      posterShape: "square"
+      logo: absolute(req, assets.logo)
     }
   });
 });
 
-// Stream
+// ---------------- STREAM ----------------
+
 app.get("/stream/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -119,6 +160,8 @@ app.get("/stream/tv/:id.json", (req, res) => {
     ]
   });
 });
+
+// ---------------- HOME ----------------
 
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
