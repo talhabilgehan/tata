@@ -2,56 +2,60 @@ const { resolveTata } = require("./tata");
 const { resolveVavoo } = require("./vavoo");
 const { isHealthy } = require("./health");
 
-function withTimeout(promise, ms) {
-  return Promise.race([
-    promise,
-    new Promise((_, reject) =>
-      setTimeout(() => reject(new Error("timeout")), ms)
-    )
+function timeout(ms) {
+  return new Promise((_, reject) => {
+    setTimeout(() => reject(new Error("timeout")), ms);
+  });
+}
+
+async function tataTask(id) {
+  const url = await resolveTata(id);
+
+  if (!url) {
+    throw new Error("No TATA stream");
+  }
+
+  const healthy = await Promise.race([
+    isHealthy(url),
+    timeout(3000)
   ]);
+
+  if (!healthy) {
+    throw new Error("TATA unhealthy");
+  }
+
+  return {
+    source: "TATA",
+    stream: {
+      url
+    }
+  };
+}
+
+async function vavooTask(name) {
+  const stream = await Promise.race([
+    resolveVavoo(name),
+    timeout(3000)
+  ]);
+
+  if (!stream) {
+    throw new Error("No VAVOO stream");
+  }
+
+  return {
+    source: "VAVOO",
+    stream
+  };
 }
 
 async function resolveChannel(id, name) {
-  // İkisini de aynı anda başlat
-  const tataPromise = (async () => {
-    const url = await resolveTata(id);
+  const tataPromise = tataTask(id);
+  const vavooPromise = vavooTask(name);
 
-    if (!url) {
-      throw new Error("No TATA stream");
-    }
-
-    const healthy = await withTimeout(isHealthy(url), 3000);
-
-    if (!healthy) {
-      throw new Error("TATA unhealthy");
-    }
-
-    return {
-      source: "TATA",
-      stream: {
-        url
-      }
-    };
-  })();
-
-  const vavooPromise = (async () => {
-    const stream = await withTimeout(resolveVavoo(name), 3000);
-
-    if (!stream) {
-      throw new Error("No VAVOO stream");
-    }
-
-    return {
-      source: "VAVOO",
-      stream
-    };
-  })();
-
-  // Önce TATA'nın sonucunu bekle (en fazla 3 sn)
   try {
     return await tataPromise;
   } catch (_) {
-    // TATA olmadıysa VAVOO'yu kullan
+    // TATA başarısızsa VAVOO'ya geç
   }
 
   try {
