@@ -1,9 +1,10 @@
-const RAW = "https://raw.githubusercontent.com/talhabilgehan/tata/main/tata.m3u";
+const RAW =
+  "https://raw.githubusercontent.com/talhabilgehan/tata/main/tata.m3u";
 
 const GROUPS = {
   ulusal: ["Ulusal"],
-  haber: ["Haber"],
   spor: ["Spor"],
+  haber: ["Haber"],
   belgesel: ["Belgesel"],
   cocuk: ["Çocuk", "Cocuk"]
 };
