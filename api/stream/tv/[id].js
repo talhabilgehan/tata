@@ -22,12 +22,21 @@ function parseM3U(text) {
 }
 
 export default async function handler(req, res) {
-  const name = decodeURIComponent(
-    String(req.query.id)
-      .replace(/^tv-/, "")
-      .replace(".json", "")
-  );
+const slug = String(req.query.id)
+  .replace(/^tv-/, "")
+  .replace(".json", "");
 
+const txt = await fetch(RAW).then(r => r.text());
+const channels = parseM3U(txt);
+
+const ch = channels.find(c =>
+  c.name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "") === slug
+);
   const txt = await fetch(RAW).then(r => r.text());
   const channels = parseM3U(txt);
 
