@@ -1,0 +1,17 @@
+{
+  "name": "tata",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TATA",
+  "main": "addon.js",
+  "scripts": {
+    "start": "node addon.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
