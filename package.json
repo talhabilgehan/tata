@@ -2,7 +2,7 @@
   "name": "tata",
   "version": "1.0.0",
   "private": true,
-  "description": "TATA",
+  "description": "TATA Live TV",
   "main": "addon.js",
   "scripts": {
     "start": "node addon.js"
