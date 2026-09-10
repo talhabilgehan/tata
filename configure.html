@@ -76,7 +76,8 @@ Install Addon
 <script>
 document.getElementById("install").onclick=()=>{
 const base=window.location.origin;
-window.location.href=`stremio://${base}/manifest.json`;
+const host = window.location.host;
+window.location.href = `stremio://${host}/manifest.json`;
 };
 </script>
 
