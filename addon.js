@@ -48,7 +48,7 @@ app.get("/manifest.json", (req, res) => {
 
   res.json({
     id: "tata.live",
-    version: "3.2.0",
+    version: "4.0.0",
     name: "TATA",
     description: "Premium Live TV",
 
@@ -135,27 +135,21 @@ app.get("/stream/tv/:id.json", async (req, res) => {
   }
 
   try {
-    const result = await resolveChannel(id, channel.name);
+    const result = await resolveChannel(id);
 
-    if (!result.stream) {
+    if (!result || !result.stream) {
       return res.json({ streams: [] });
     }
 
-    const stream = {
-      ...result.stream,
-      title: `${channel.name} • ${result.source}`
-    };
-
     return res.json({
-      streams: [stream]
+      streams: [{
+        ...result.stream,
+        title: `${channel.name} • ${result.source}`
+      }]
     });
 
   } catch (err) {
-
-    console.error(
-      `[STREAM ERROR] ${channel.name}:`,
-      err.message
-    );
+    console.error(`[STREAM ERROR] ${channel.name}:`, err.message);
 
     return res.json({ streams: [] });
   }
