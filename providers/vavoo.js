@@ -3,13 +3,14 @@ const cache = require("./cache");
 const channelMap = require("./channelMap.json");
 
 const BASE = "https://tvvoo.hayd.uk";
+const TIMEOUT = 3000;
 
 function getJSON(url) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { timeout: 3000 }, (res) => {
+    const req = https.get(url, { timeout: TIMEOUT }, (res) => {
       let body = "";
 
-      res.on("data", c => body += c);
+      res.on("data", chunk => body += chunk);
 
       res.on("end", () => {
         try {
@@ -29,32 +30,53 @@ function getJSON(url) {
   });
 }
 
-function scoreStream(stream) {
-  const title = `${stream.name || ""} ${stream.title || ""}`.toUpperCase();
+function score(stream) {
+  const text = `${stream.name || ""} ${stream.title || ""}`.toUpperCase();
 
-  if (title.includes("FHD")) return 300;
-  if (title.includes("FULL HD")) return 300;
-  if (title.includes("1080")) return 300;
-  if (title.includes("HD")) return 200;
+  if (text.includes("FHD")) return 500;
+  if (text.includes("FULL HD")) return 500;
+  if (text.includes("1080")) return 450;
+  if (text.includes("HD")) return 300;
   return 100;
 }
 
+function normalize(stream) {
+  const url = stream.url || stream.externalUrl;
+
+  if (!url) return null;
+
+  return {
+    ...stream,
+    url,
+    proxyHeaders: stream.proxyHeaders || {},
+    behaviorHints: stream.behaviorHints || {}
+  };
+}
+
 async function resolveVavoo(name) {
+
   const cached = cache.get(name);
+
   if (cached) return cached;
 
   const id = channelMap[name];
 
   if (!id) return null;
 
-  const data = await getJSON(`${BASE}/stream/tv/${id}.json`);
+  const data = await getJSON(
+    `${BASE}/stream/tv/${id}.json`
+  );
 
-  if (!data.streams || !data.streams.length) {
+  if (!Array.isArray(data.streams) || data.streams.length === 0) {
     return null;
   }
 
-  const stream = [...data.streams]
-    .sort((a, b) => scoreStream(b) - scoreStream(a))[0];
+  const stream = data.streams
+    .map(normalize)
+    .filter(Boolean)
+    .sort((a, b) => score(b) - score(a))[0];
+
+  if (!stream) return null;
 
   cache.set(name, stream);
 
