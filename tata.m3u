@@ -3,22 +3,22 @@
 
 
 
-https://tv-trt1.medya.trt.com.tr/master.m3u8
+http://176.65.153.66:6001/play/a01x/index.m3u8
 #EXTINF:-1 tvg-name="ATV" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838305.png" group-title="Ulusal",ATV
 
 
 
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:F5:CE:8E&stream=196714&extension=ts&play_token=DWNCFJZrjl
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/atv/atv_1080p.m3u8
 #EXTINF:-1 tvg-name="STAR" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838418.png" group-title="Ulusal",STAR
 
 
 
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:F5:CE:8E&stream=196711&extension=ts&play_token=nggIpK8Ukz
+https://dogus.daioncdn.net/startv/startv_720p.m3u8?&sid=88jhb6leqiih&app=a20ac41e-bdc3-4aa1-934d-26b484480ac9&ce=3
 #EXTINF:-1 tvg-name="SHOW" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839061.png" group-title="Ulusal",SHOW
 
 
 
-http://line.tivi-one.net:80/play/live.php?mac=00:1A:79:F5:CE:8E&stream=196713&extension=ts&play_token=xhxHbZR2QZ
+https://ciner.daioncdn.net/showtv/showtv_1080p.m3u8?ex=1664766175&st=RBzhSuGauna0OGld-DJUVA&tv=1&sid=88iye2ldl2ew&app=4bc856ef-4c68-4a94-bc87-37dfaaa66558&ce=3
 #EXTINF:-1 tvg-name="KANAL D" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838833.png" group-title="Ulusal",KANAL D
 
 
