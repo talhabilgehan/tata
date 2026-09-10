@@ -1,16 +1,7 @@
 {
-  "id": "talhabilgehan.tata.tv",
-  "version": "2.0.0",
-  "name": "TATA Live TV",
-  "description": "95 Kanallı Nuvio TV",
-  "resources": ["catalog", "stream"],
-  "types": ["tv"],
-  "idPrefixes": ["tv-"],
-  "catalogs": [
-    { "type": "tv", "id": "ulusal", "name": "Ulusal" },
-    { "type": "tv", "id": "haber", "name": "Haber" },
-    { "type": "tv", "id": "spor", "name": "Spor" },
-    { "type": "tv", "id": "belgesel", "name": "Belgesel" },
-    { "type": "tv", "id": "cocuk", "name": "Çocuk" }
-  ]
+  "id": "tata.live",
+  "version": "1.0.0",
+  "name": "TATA",
+  "description": "Premium Live TV",
+  "logo": "https://tata-eosin.vercel.app/logo.png"
 }
