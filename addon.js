@@ -28,7 +28,7 @@ function assetPaths(name) {
   const hasClear = fs.existsSync(clearFile);
 
   return {
-    poster: `/logos/${encoded}.png`,
+    posterTemplate: "/poster/Poster.png",
     logo: hasClear
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
@@ -88,8 +88,13 @@ app.get("/catalog/tv/:id.json", (req, res) => {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-      poster: absolute(req, assets.poster),
+
+      // Ana sayfa kartı: tüm kanallarda aynı poster
+      poster: absolute(req, assets.posterTemplate),
+
+      // Kartın üzerinde ve üst banner'da kanalın kendi clear logosu
       logo: absolute(req, assets.logo),
+
       posterShape: "square"
     };
   });
@@ -116,6 +121,8 @@ app.get("/meta/tv/:id.json", (req, res) => {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
+
+      // Detay sayfasında sadece clear logo
       logo: absolute(req, assets.logo)
     }
   });
