@@ -14,8 +14,11 @@ const PORT = process.env.PORT || 7000;
 app.use(cors());
 app.use(express.static(path.join(__dirname, "public")));
 
-// M3U'yu başlangıçta belleğe al
 loadM3U();
+
+function absoluteLogo(req, logo) {
+  return `${req.protocol}://${req.get("host")}${logo}`;
+}
 
 // Manifest
 app.get("/manifest.json", (req, res) => {
@@ -46,7 +49,6 @@ app.get("/manifest.json", (req, res) => {
   });
 });
 
-// Kategori eşlemesi
 const catalogMap = {
   ulusal: "Ulusal",
   spor: "Spor",
@@ -66,16 +68,16 @@ app.get("/catalog/tv/:id.json", (req, res) => {
     id: `tv-${channel.id}`,
     type: "tv",
     name: channel.name,
-    poster: channel.logo,
-    logo: channel.logo,
-    posterShape: "square",
-    background: channel.logo
+    poster: absoluteLogo(req, channel.logo),
+    logo: absoluteLogo(req, channel.logo),
+    background: absoluteLogo(req, channel.logo),
+    posterShape: "square"
   }));
 
   res.json({ metas });
 });
 
-// Meta (Nuvio/Stremio detay ekranı)
+// Meta
 app.get("/meta/tv/:id.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
@@ -91,10 +93,10 @@ app.get("/meta/tv/:id.json", (req, res) => {
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-      poster: channel.logo,
-      logo: channel.logo,
-      posterShape: "square",
-      background: channel.logo
+      poster: absoluteLogo(req, channel.logo),
+      logo: absoluteLogo(req, channel.logo),
+      background: absoluteLogo(req, channel.logo),
+      posterShape: "square"
     }
   });
 });
@@ -120,7 +122,6 @@ app.get("/stream/tv/:id.json", (req, res) => {
   });
 });
 
-// Ana sayfa
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
 });
