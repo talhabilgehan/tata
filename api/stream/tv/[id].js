@@ -1,4 +1,5 @@
-const RAW = "https://raw.githubusercontent.com/talhabilgehan/tata/main/tata.m3u";
+const RAW =
+  "https://raw.githubusercontent.com/talhabilgehan/tata/main/tata.m3u";
 
 function parseM3U(text) {
   const lines = text.split(/\r?\n/);
@@ -22,7 +23,9 @@ function parseM3U(text) {
 
 export default async function handler(req, res) {
   const name = decodeURIComponent(
-    String(req.query.id).replace(/^tv-/, "").replace(".json", "")
+    String(req.query.id)
+      .replace(/^tv-/, "")
+      .replace(".json", "")
   );
 
   const txt = await fetch(RAW).then(r => r.text());
