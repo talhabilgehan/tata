@@ -248,12 +248,12 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch751
 
 
 http://tv.atomspor.workers.dev/?ID=bein-sports-1
-#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1 Alternatif
+#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1 ALT 1
 
 
 
 https://cors-anywhere.yidianzhishi.cn/https://dga1op10s1u3leo.38f3bb9511487c.click/live/selcukbeinsports1/playlist.m3u8|referer=https://www.selcuksportshd1837.xyz/‎|user-agent=Dalvik/2.1.0 Mozilla/5.0 (m3u-ip.tv 2.2.4) Android
-#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1 Alternatif 2
+#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1 ALT 2
 
 
 
@@ -288,11 +288,6 @@ http://schwarzer-1903.com:8080/yasarp/palaz07@/429633
 
 
 http://schwarzer-1903.com:8080/yasarp/palaz07@/429634
-#EXTINF:-1 tvg-name="TABİİ SPOR 3" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR 3
-
-
-
-http://schwarzer-1903.com:8080/yasarp/palaz07@/429635
 #EXTINF:-1 tvg-name="S SPORT" tvg-logo="https://ssport.tv/assets/images/icons/logo.svg" group-title="Spor",S SPORT
 
 
@@ -378,7 +373,7 @@ http://schwarzer-1903.com:8080/yasarp/palaz07@/276
 
 
 https://square-leaf-d613.panorea1000.workers.dev/?xml=ch782
-#EXTINF:-1 tvg-name="EXXEN 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" group-title="Spor",EXXEN 1
+#EXTINF:-1 tvg-name="EXXEN SPOR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" group-title="Spor",EXXEN SPOR
 
 
 
