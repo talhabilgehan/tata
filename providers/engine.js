@@ -3,21 +3,21 @@ const { resolveVavoo } = require("./vavoo");
 const { isHealthy } = require("./health");
 const healthStore = require("./healthStore");
 
-function delay(ms) {
-  return new Promise(r => setTimeout(r, ms));
+function timeout(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function tataTask(id) {
   const url = await resolveTata(id);
 
-  if (!url) throw new Error("no tata");
+  if (!url) throw new Error("No TATA stream");
 
   const healthy = await Promise.race([
     isHealthy(url),
-    delay(3000).then(() => false)
+    timeout(3000).then(() => false)
   ]);
 
-  if (!healthy) throw new Error("tata unhealthy");
+  if (!healthy) throw new Error("TATA unhealthy");
 
   return {
     source: "TATA",
@@ -28,10 +28,10 @@ async function tataTask(id) {
 async function vavooTask(name) {
   const stream = await Promise.race([
     resolveVavoo(name),
-    delay(3000).then(() => null)
+    timeout(3000).then(() => null)
   ]);
 
-  if (!stream) throw new Error("no vavoo");
+  if (!stream) throw new Error("No VAVOO stream");
 
   return {
     source: "VAVOO",
@@ -40,14 +40,10 @@ async function vavooTask(name) {
 }
 
 async function resolveChannel(id, name) {
-
   const cached = healthStore.get(id);
 
   if (cached && Date.now() - cached.updated < 300000) {
-    return {
-      source: cached.source,
-      stream: cached.stream
-    };
+    return cached;
   }
 
   const tataPromise = tataTask(id).catch(() => null);
