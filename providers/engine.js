@@ -1,5 +1,4 @@
 const { resolveTata } = require("./tata");
-const { resolveVavoo } = require("./vavoo");
 const { isHealthy } = require("./health");
 const healthStore = require("./healthStore");
 
@@ -10,14 +9,14 @@ function wait(ms) {
 async function tataTask(id) {
   const url = await resolveTata(id);
 
-  if (!url) throw new Error("No TATA stream");
+  if (!url) throw new Error("No stream");
 
   const healthy = await Promise.race([
     isHealthy(url),
     wait(3000).then(() => false)
   ]);
 
-  if (!healthy) throw new Error("TATA unhealthy");
+  if (!healthy) throw new Error("Unhealthy");
 
   return {
     source: "TATA",
@@ -25,49 +24,24 @@ async function tataTask(id) {
   };
 }
 
-async function vavooTask(name) {
-  const stream = await Promise.race([
-    resolveVavoo(name),
-    wait(5000).then(() => null)
-  ]);
-
-  if (!stream) throw new Error("No VAVOO stream");
-
-  return {
-    source: "VAVOO",
-    stream
-  };
-}
-
-async function resolveChannel(id, name) {
-
+async function resolveChannel(id) {
   const cached = healthStore.get(id);
 
   if (cached && Date.now() - cached.updated < 300000) {
     return cached;
   }
 
-  const tataPromise = tataTask(id).catch(() => null);
-  const vavooPromise = vavooTask(name).catch(() => null);
+  const result = await tataTask(id).catch(() => null);
 
-  const tata = await tataPromise;
-
-  if (tata) {
-    healthStore.set(id, tata);
-    return tata;
+  if (!result) {
+    return {
+      source: "OFFLINE",
+      stream: null
+    };
   }
 
-  const vavoo = await vavooPromise;
-
-  if (vavoo) {
-    healthStore.set(id, vavoo);
-    return vavoo;
-  }
-
-  return {
-    source: "OFFLINE",
-    stream: null
-  };
+  healthStore.set(id, result);
+  return result;
 }
 
 module.exports = {
