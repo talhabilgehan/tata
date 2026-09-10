@@ -10,8 +10,9 @@
   "engines": {
     "node": ">=20"
   },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.19.2"
-  }
+ "dependencies": {
+  "@napi-rs/canvas": "^0.1.68",
+  "cors": "^2.8.5",
+  "express": "^4.19.2"
+}
 }
