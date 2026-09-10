@@ -4,10 +4,11 @@ const cache = require("./cache");
 const BASE = "https://tvvoo.hayd.uk";
 
 const channelMap = new Map();
-let loaded = false;
+let catalogLoaded = false;
 
 function getJSON(url) {
   return new Promise((resolve, reject) => {
+
     const req = https.get(url, { timeout: 7000 }, (res) => {
 
       let body = "";
@@ -15,11 +16,13 @@ function getJSON(url) {
       res.on("data", c => body += c);
 
       res.on("end", () => {
+
         try {
           resolve(JSON.parse(body));
         } catch {
           reject(new Error("Invalid JSON"));
         }
+
       });
 
     });
@@ -30,74 +33,90 @@ function getJSON(url) {
       req.destroy();
       reject(new Error("Timeout"));
     });
+
   });
 }
 
-function normalize(text){
+function normalize(text) {
+
   return text
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g,"")
-    .replace(/[^\w\s]/g,"")
-    .replace(/\s+/g," ")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\w\s]/g, "")
+    .replace(/\s+/g, " ")
     .trim();
+
 }
 
-async function loadCatalog(){
+async function loadCatalog() {
 
-  if(loaded) return;
+  if (catalogLoaded) return;
 
   const data = await getJSON(`${BASE}/catalog/tv/vavoo_tv_tr.json`);
 
-  for(const ch of data.metas||[]){
+  for (const ch of data.metas || []) {
+
     channelMap.set(normalize(ch.name), ch.id);
+
   }
 
-  loaded=true;
+  catalogLoaded = true;
+
 }
 
-function aliases(name){
+function aliases(name) {
 
-  return[
+  return [
     name,
-    name.replace(/^NOW$/i,"FOX"),
-    name.replace(/^FOX$/i,"NOW"),
-    name.replace("CNN TÜRK","CNN TURK"),
-    name.replace("TRT-1","TRT 1"),
-    name.replace("A TV","ATV"),
-    name.replace("TV 8","TV8")
+    name.replace(/^NOW$/i, "FOX"),
+    name.replace(/^FOX$/i, "NOW"),
+    name.replace("CNN TÜRK", "CNN TURK"),
+    name.replace("TRT-1", "TRT 1"),
+    name.replace("A TV", "ATV"),
+    name.replace("TV 8", "TV8")
   ];
+
 }
 
-async function resolveVavoo(name){
+async function resolveVavoo(name) {
 
   const cached = cache.get(name);
 
-  if(cached) return cached;
+  if (cached) return cached;
 
   await loadCatalog();
 
-  for(const candidate of aliases(name)){
+  for (const candidate of aliases(name)) {
 
     const id = channelMap.get(normalize(candidate));
 
-    if(!id) continue;
+    if (!id) continue;
+
+    // DİKKAT:
+    // id zaten encode edilmiş geliyor.
+    // Tekrar encode ETMİYORUZ.
 
     const data = await getJSON(
-      `${BASE}/stream/tv/${encodeURIComponent(id)}.json`
+      `${BASE}/stream/tv/${id}.json`
     );
 
-    if(data.streams?.length){
+    if (data.streams?.length) {
 
       const stream = data.streams[0];
 
-      cache.set(name,stream);
+      cache.set(name, stream);
 
       return stream;
+
     }
+
   }
 
   return null;
+
 }
 
-module.exports={resolveVavoo};
+module.exports = {
+  resolveVavoo
+};
