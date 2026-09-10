@@ -61,23 +61,17 @@ color:#777;
 <div class="card">
 <h1>TATA</h1>
 
-<p>
-Premium Live TV
-</p>
+<p>Premium Live TV</p>
 
-<button id="install">
-Install Addon
-</button>
+<button id="install">Install Addon</button>
 
 <small>100 Kanal · 5 Kategori</small>
-
 </div>
 
 <script>
-document.getElementById("install").onclick=()=>{
-const base=window.location.origin;
-const host = window.location.host;
-window.location.href = `stremio://${host}/manifest.json`;
+document.getElementById("install").onclick = () => {
+  const host = window.location.host;
+  window.location.href = `stremio://${host}/manifest.json`;
 };
 </script>
 
