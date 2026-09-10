@@ -24,11 +24,17 @@ function absolute(req, url) {
 function assetPaths(name) {
   const encoded = encodeURIComponent(name);
 
+  const posterFile = path.join(__dirname, "public", "poster", `${name}.jpg`);
+  const hasPoster = fs.existsSync(posterFile);
+
   const clearFile = path.join(__dirname, "public", "clearlogos", `${name}.png`);
   const hasClear = fs.existsSync(clearFile);
 
   return {
-    posterTemplate: "/poster/Poster.png",
+    poster: hasPoster
+      ? `/poster/${encoded}.jpg`
+      : `/logos/${encoded}.png`,
+
     logo: hasClear
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
@@ -89,10 +95,10 @@ app.get("/catalog/tv/:id.json", (req, res) => {
       type: "tv",
       name: channel.name,
 
-      // Ana sayfa kartı: tüm kanallarda aynı poster
-      poster: absolute(req, assets.posterTemplate),
+      // Ana sayfa kartı
+      poster: absolute(req, assets.poster),
 
-      // Kartın üzerinde ve üst banner'da kanalın kendi clear logosu
+      // Üst banner ve yükleme ekranı
       logo: absolute(req, assets.logo),
 
       posterShape: "square"
