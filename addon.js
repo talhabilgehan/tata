@@ -27,7 +27,7 @@ app.get("/manifest.json", (req, res) => {
     name: "TATA",
     description: "Premium Live TV",
 
-    resources: ["catalog", "stream"],
+    resources: ["catalog", "meta", "stream"],
     types: ["tv"],
     idPrefixes: ["tv-"],
 
@@ -68,16 +68,42 @@ app.get("/catalog/tv/:id.json", (req, res) => {
     name: channel.name,
     poster: channel.logo,
     logo: channel.logo,
-    posterShape: "square"
+    posterShape: "square",
+    background: channel.logo
   }));
 
   res.json({ metas });
 });
 
+// Meta (Nuvio/Stremio detay ekranı)
+app.get("/meta/tv/:id.json", (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
+
+  const id = req.params.id.replace(/^tv-/, "");
+  const channel = getChannel(id);
+
+  if (!channel) {
+    return res.status(404).json({ meta: null });
+  }
+
+  res.json({
+    meta: {
+      id: `tv-${channel.id}`,
+      type: "tv",
+      name: channel.name,
+      poster: channel.logo,
+      logo: channel.logo,
+      posterShape: "square",
+      background: channel.logo
+    }
+  });
+});
+
 // Stream
 app.get("/stream/tv/:id.json", (req, res) => {
-  const id = req.params.id.replace(/^tv-/, "");
+  res.setHeader("Cache-Control", "no-store");
 
+  const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
 
   if (!channel) {
@@ -87,6 +113,7 @@ app.get("/stream/tv/:id.json", (req, res) => {
   res.json({
     streams: [
       {
+        title: channel.name,
         url: channel.stream
       }
     ]
