@@ -39,17 +39,25 @@ function assetPaths(name) {
 app.get("/poster/:name.svg", (req, res) => {
   const name = decodeURIComponent(req.params.name);
   const encoded = encodeURIComponent(name);
+  const logoUrl = `${req.protocol}://${req.get("host")}/logos/${encoded}.png`;
 
   res.setHeader("Content-Type", "image/svg+xml");
   res.send(`
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="512"
+     height="512"
+     viewBox="0 0 512 512">
+
   <rect width="512" height="512" fill="#000000"/>
-  <image href="/logos/${encoded}.png"
-         x="72"
-         y="72"
-         width="368"
-         height="368"
-         preserveAspectRatio="xMidYMid meet"/>
+
+  <image
+    href="${logoUrl}"
+    x="64"
+    y="64"
+    width="384"
+    height="384"
+    preserveAspectRatio="xMidYMid meet"/>
+
 </svg>`);
 });
 
