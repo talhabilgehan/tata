@@ -5,44 +5,51 @@ const GROUPS = {
   haber: ["Haber"],
   spor: ["Spor"],
   belgesel: ["Belgesel"],
-  cocuk: ["Çocuk","Cocuk"]
+  cocuk: ["Çocuk", "Cocuk"]
 };
 
-function parseM3U(text){
-  const lines=text.split(/\r?\n/);
-  const out=[];
-  let c=null;
+function parseM3U(text) {
+  const lines = text.split(/\r?\n/);
+  const channels = [];
+  let current = null;
 
-  for(const line of lines){
-    if(line.startsWith("#EXTINF")){
-      c={
-        name: line.match(/,(.*)$/)?.[1]?.trim()||"",
-        group: line.match(/group-title="([^"]+)"/)?.[1]||"",
-        logo: line.match(/tvg-logo="([^"]+)"/)?.[1]||""
+  for (const line of lines) {
+    if (line.startsWith("#EXTINF")) {
+      current = {
+        name: line.match(/,(.*)$/)?.[1]?.trim() || "",
+        group:
+          line.match(/group-title="([^"]+)"/)?.[1] ||
+          line.match(/tvg-group="([^"]+)"/)?.[1] ||
+          "",
+        logo: line.match(/tvg-logo="([^"]+)"/)?.[1] || ""
       };
-    }else if(c && line.startsWith("http")){
-      c.url=line.trim();
-      out.push(c);
-      c=null;
+    } else if (current && line.startsWith("http")) {
+      current.url = line.trim();
+      channels.push(current);
+      current = null;
     }
   }
-  return out;
+
+  return channels;
 }
 
-module.exports = async (req,res)=>{
-  const txt=await fetch(RAW).then(r=>r.text());
-  const channels=parseM3U(txt);
+export default async function handler(req, res) {
+  const id = String(req.query.id).replace(".json", "");
 
-  const metas=channels
-    .filter(c=>GROUPS[req.query.id]?.some(g=>c.group.includes(g)))
-    .map(c=>({
-      id:`tv-${c.name}`,
-      type:"tv",
-      name:c.name,
-      poster:c.logo,
-      logo:c.logo,
-      posterShape:"square"
+  const txt = await fetch(RAW).then(r => r.text());
+  const channels = parseM3U(txt);
+
+  const metas = channels
+    .filter(c => GROUPS[id]?.some(g => c.group.includes(g)))
+    .map(c => ({
+      id: `tv-${encodeURIComponent(c.name)}`,
+      type: "tv",
+      name: c.name,
+      poster: c.logo,
+      logo: c.logo,
+      posterShape: "square"
     }));
 
-  res.status(200).json({metas});
-};
+  res.setHeader("Content-Type", "application/json");
+  res.status(200).json({ metas });
+}
