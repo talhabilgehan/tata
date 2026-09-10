@@ -1,49 +1,59 @@
-import fs from "fs";
-import path from "path";
+const fs = require("fs");
+const path = require("path");
 
-export default function handler(req, res) {
-  const id = String(req.query.id).replace(".json", "");
+const GROUPS = {
+  ulusal: ["Ulusal", "National"],
+  haber: ["Haber", "News"],
+  spor: ["Spor", "Sports"],
+  belgesel: ["Belgesel", "Documentary"],
+  cocuk: ["Çocuk", "Cocuk", "Kids", "Kid"]
+};
 
-  const text = fs.readFileSync(
-    path.join(process.cwd(), "tata.m3u"),
-    "utf8"
-  );
+function parseM3U() {
+  const file = fs.readFileSync(path.join(process.cwd(), "tata.m3u"), "utf8");
+  const lines = file.split(/\r?\n/);
 
-  const lines = text.split(/\r?\n/);
-  const metas = [];
+  const channels = [];
+  let current = null;
 
-  for (let i = 0; i < lines.length; i++) {
-    if (!lines[i].startsWith("#EXTINF")) continue;
+  for (const line of lines) {
+    if (line.startsWith("#EXTINF")) {
+      const name = line.match(/,(.*)$/)?.[1]?.trim() || "Kanal";
+      const group =
+        line.match(/group-title="([^"]+)"/)?.[1] || "Ulusal";
+      const logo = line.match(/tvg-logo="([^"]+)"/)?.[1] || "";
 
-    const extinf = lines[i];
-    const groupLine = lines[i + 1] || "";
-    const group = groupLine.startsWith("#EXTGRP:")
-      ? groupLine.replace("#EXTGRP:", "").trim()
-      : "";
-
-    const name = extinf.split(",").pop().trim();
-    const logo = (extinf.match(/tvg-logo="([^"]+)"/) || [])[1] || "";
-
-    const gid =
-      group === "Ulusal" ? "ulusal" :
-      group === "Haber" ? "haber" :
-      group === "Spor" ? "spor" :
-      group === "Belgesel" ? "belgesel" :
-      group === "Çocuk" ? "cocuk" :
-      null;
-
-    if (gid !== id) continue;
-
-    metas.push({
-      id: "tv-" + encodeURIComponent(name),
-      type: "tv",
-      name,
-      poster: logo,
-      logo,
-      posterShape: "square"
-    });
+      current = { name, group, logo };
+    } else if (current && line.startsWith("http")) {
+      current.url = line.trim();
+      channels.push(current);
+      current = null;
+    }
   }
+
+  return channels;
+}
+
+module.exports = (req, res) => {
+  const id = req.query.id;
+
+  const channels = parseM3U();
+
+  const metas = channels
+    .filter((c) =>
+      GROUPS[id]?.some((g) =>
+        c.group.toLowerCase().includes(g.toLowerCase())
+      )
+    )
+    .map((c) => ({
+      id: `tv-${c.name}`,
+      type: "tv",
+      name: c.name,
+      poster: c.logo,
+      logo: c.logo,
+      posterShape: "square"
+    }));
 
   res.setHeader("Content-Type", "application/json");
   res.status(200).json({ metas });
-}
+};
