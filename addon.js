@@ -34,7 +34,6 @@ function assetPaths(name) {
     poster: fs.existsSync(posterFile)
       ? `/poster/${encoded}.jpg`
       : `/logos/${encoded}.png`,
-
     logo: fs.existsSync(clearFile)
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
@@ -58,7 +57,7 @@ app.get("/manifest.json", (req, res) => {
   res.json({
 
     id: "tata.live",
-    version: "3.0.0",
+    version: "3.1.0",
     name: "TATA",
     description: "Premium Live TV",
 
@@ -189,7 +188,9 @@ app.get("/stream/tv/:id.json", async (req, res) => {
         `/proxy?url=${encodeURIComponent(stream.url)}`
       );
 
-      delete stream.proxyHeaders;
+      // TRUTH MODE:
+      // proxyHeaders artık silinmiyor.
+      // TVVOO'dan gelen header bilgisi korunuyor.
 
     }
 
