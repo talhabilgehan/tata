@@ -4,15 +4,15 @@ const cache = require("./cache");
 const BASE = "https://tvvoo.hayd.uk";
 
 const channelMap = new Map();
-let catalogLoaded = false;
+let loaded = false;
 
 function getJSON(url) {
   return new Promise((resolve, reject) => {
-    const req = https.get(url, { timeout: 10000 }, (res) => {
+    const req = https.get(url, { timeout: 7000 }, (res) => {
 
       let body = "";
 
-      res.on("data", chunk => body += chunk);
+      res.on("data", c => body += c);
 
       res.on("end", () => {
         try {
@@ -33,34 +33,32 @@ function getJSON(url) {
   });
 }
 
-function normalize(text) {
+function normalize(text){
   return text
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^\w\s]/g, "")
-    .replace(/\s+/g, " ")
+    .replace(/[\u0300-\u036f]/g,"")
+    .replace(/[^\w\s]/g,"")
+    .replace(/\s+/g," ")
     .trim();
 }
 
-async function loadCatalog() {
+async function loadCatalog(){
 
-  if (catalogLoaded) return;
+  if(loaded) return;
 
   const data = await getJSON(`${BASE}/catalog/tv/vavoo_tv_tr.json`);
 
-  const metas = Array.isArray(data.metas) ? data.metas : [];
-
-  for (const ch of metas) {
+  for(const ch of data.metas||[]){
     channelMap.set(normalize(ch.name), ch.id);
   }
 
-  catalogLoaded = true;
+  loaded=true;
 }
 
 function aliases(name){
 
-  return [
+  return[
     name,
     name.replace(/^NOW$/i,"FOX"),
     name.replace(/^FOX$/i,"NOW"),
@@ -85,19 +83,21 @@ async function resolveVavoo(name){
 
     if(!id) continue;
 
-    const data = await getJSON(`${BASE}/stream/tv/${id}.json`);
+    const data = await getJSON(
+      `${BASE}/stream/tv/${encodeURIComponent(id)}.json`
+    );
 
     if(data.streams?.length){
 
-      const url = data.streams[0].url;
+      const stream = data.streams[0];
 
-      cache.set(name,url);
+      cache.set(name,stream);
 
-      return url;
+      return stream;
     }
   }
 
   return null;
 }
 
-module.exports = { resolveVavoo };
+module.exports={resolveVavoo};
