@@ -2,12 +2,11 @@ const fs = require("fs");
 const path = require("path");
 
 const M3U_FILE = path.join(__dirname, "tata.m3u");
-const LOGO_BASE = "/logos";
+const LOGO_BASE = process.env.LOGO_BASE || "/logos";
 
 let channels = [];
 let grouped = {};
 
-// Kanal adını güvenli URL'ye çevir
 function slugify(text) {
   return text
     .normalize("NFD")
@@ -23,7 +22,6 @@ function slugify(text) {
     .toLowerCase();
 }
 
-// Kategoriyi standartlaştır
 function normalizeGroup(group = "") {
   const g = group.toLowerCase();
 
@@ -36,7 +34,10 @@ function normalizeGroup(group = "") {
   return null;
 }
 
-// M3U'yu belleğe yükle
+function getLogo(name) {
+  return `${LOGO_BASE}/${encodeURIComponent(name)}.png`;
+}
+
 function loadM3U() {
   const text = fs.readFileSync(M3U_FILE, "utf8");
   const lines = text.split(/\r?\n/);
@@ -64,12 +65,10 @@ function loadM3U() {
         id: slugify(name),
         name,
         group,
-        logo: `${LOGO_BASE}/${encodeURIComponent(name)}.png`,
+        logo: getLogo(name),
         stream: ""
       };
-    }
-
-    else if (current && line.startsWith("http")) {
+    } else if (current && line.startsWith("http")) {
       current.stream = line.trim();
 
       channels.push(current);
@@ -85,7 +84,7 @@ function loadM3U() {
   return channels;
 }
 
-// İlk açılışta belleğe al
+// Sunucu açılırken bir kez belleğe al
 loadM3U();
 
 module.exports = {
