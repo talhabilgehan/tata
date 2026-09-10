@@ -2,8 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const fs = require("fs");
-const https = require("https");
-const http = require("http");
 
 const {
   getGroups,
@@ -35,149 +33,26 @@ function assetPaths(name) {
     poster: fs.existsSync(posterFile)
       ? `/poster/${encoded}.jpg`
       : `/logos/${encoded}.png`,
-
     logo: fs.existsSync(clearFile)
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
   };
 }
 
-/* =========================================================
-   PROXY
-========================================================= */
-
-app.get("/proxy", (req, res) => {
-
-  const target = req.query.url;
-
-  if (!target) {
-    return res.status(400).send("Missing url");
-  }
-
-  const client = target.startsWith("https") ? https : http;
-
-  const proxyRequest = client.get(target, {
-    headers: {
-      "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/138.0.0.0 Safari/537.36",
-      "Referer": "https://vavoo.to/",
-      "Origin": "https://vavoo.to"
-    }
-  }, (response) => {
-
-    const contentType = response.headers["content-type"] || "";
-
-    const isPlaylist =
-      contentType.includes("mpegurl") ||
-      target.includes(".m3u8");
-
-    if (!isPlaylist) {
-
-      res.status(response.statusCode || 200);
-
-      Object.entries(response.headers).forEach(([k, v]) => {
-        if (k.toLowerCase() !== "content-encoding") {
-          res.setHeader(k, v);
-        }
-      });
-
-      response.pipe(res);
-      return;
-    }
-
-    let body = "";
-
-    response.on("data", chunk => body += chunk);
-
-    response.on("end", () => {
-
-      const base = target.substring(0, target.lastIndexOf("/") + 1);
-
-      const rewritten = body
-        .split("\n")
-        .map(line => {
-
-          if (!line) return line;
-
-          if (line.startsWith("#EXT-X-KEY")) {
-
-            return line.replace(
-              /URI="([^"]+)"/,
-              (_, uri) => {
-
-                const absoluteKey = new URL(uri, base).toString();
-
-                return `URI="${absolute(req, `/proxy?url=${encodeURIComponent(absoluteKey)}`)}"`;
-              }
-            );
-          }
-
-          if (line.startsWith("#")) {
-            return line;
-          }
-
-          const absoluteSegment = new URL(line, base).toString();
-
-          return absolute(
-            req,
-            `/proxy?url=${encodeURIComponent(absoluteSegment)}`
-          );
-
-        })
-        .join("\n");
-
-      res.setHeader(
-        "Content-Type",
-        "application/vnd.apple.mpegurl"
-      );
-
-      res.send(rewritten);
-
-    });
-
-  });
-
-  proxyRequest.setTimeout(10000);
-
-  proxyRequest.on("timeout", () => {
-    proxyRequest.destroy();
-    res.status(504).end();
-  });
-
-  proxyRequest.on("error", () => {
-    res.status(502).end();
-  });
-
-});
-
-/* =========================================================
-   MANIFEST
-========================================================= */
+/* ================= MANIFEST ================= */
 
 app.get("/manifest.json", (req, res) => {
-
   res.setHeader("Cache-Control", "no-store");
 
   res.json({
-
     id: "tata.live",
-    version: "1.4.0",
+    version: "2.0.0",
     name: "TATA",
     description: "Premium Live TV",
 
-    resources: [
-      "catalog",
-      "meta",
-      "stream"
-    ],
-
-    types: [
-      "tv"
-    ],
-
-    idPrefixes: [
-      "tv-"
-    ],
+    resources: ["catalog", "meta", "stream"],
+    types: ["tv"],
+    idPrefixes: ["tv-"],
 
     catalogs: [
       { type: "tv", id: "ulusal", name: "Ulusal" },
@@ -191,14 +66,10 @@ app.get("/manifest.json", (req, res) => {
       configurable: false,
       configurationRequired: false
     }
-
   });
-
 });
 
-/* =========================================================
-   CATALOG
-========================================================= */
+/* ================= CATALOG ================= */
 
 const catalogMap = {
   ulusal: "Ulusal",
@@ -209,38 +80,31 @@ const catalogMap = {
 };
 
 app.get("/catalog/tv/:id.json", (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
 
   const groups = getGroups();
   const groupName = catalogMap[req.params.id];
 
   const metas = (groups[groupName] || []).map(channel => {
-
     const assets = assetPaths(channel.name);
 
     return {
-
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
-
       poster: absolute(req, assets.poster),
       logo: absolute(req, assets.logo),
-
       posterShape: "square"
-
     };
-
   });
 
   res.json({ metas });
-
 });
 
-/* =========================================================
-   META
-========================================================= */
+/* ================= META ================= */
 
 app.get("/meta/tv/:id.json", (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
 
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
@@ -252,26 +116,19 @@ app.get("/meta/tv/:id.json", (req, res) => {
   const assets = assetPaths(channel.name);
 
   res.json({
-
     meta: {
-
       id: `tv-${channel.id}`,
       type: "tv",
-
       name: channel.name,
       logo: absolute(req, assets.logo)
-
     }
-
   });
-
 });
 
-/* =========================================================
-   STREAM
-========================================================= */
+/* ================= STREAM ================= */
 
 app.get("/stream/tv/:id.json", async (req, res) => {
+  res.setHeader("Cache-Control", "no-store");
 
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
@@ -280,49 +137,30 @@ app.get("/stream/tv/:id.json", async (req, res) => {
     return res.json({ streams: [] });
   }
 
-  console.log(`[STREAM] ${channel.name}`);
-
   try {
-
     const result = await resolveChannel(id, channel.name);
 
     if (!result.stream) {
-      console.log(`[OFFLINE] ${channel.name}`);
       return res.json({ streams: [] });
     }
 
-    const stream = { ...result.stream };
-
-    if (result.source === "VAVOO" && stream.url) {
-
-      stream.url = absolute(
-        req,
-        `/proxy?url=${encodeURIComponent(stream.url)}`
-      );
-
-    }
-
-    stream.title = `${channel.name} • ${result.source}`;
-
-    console.log(`[${result.source}] ${channel.name}`);
+    const stream = {
+      ...result.stream,
+      title: `${channel.name} • ${result.source}`
+    };
 
     return res.json({
       streams: [stream]
     });
 
   } catch (err) {
-
     console.error(`[STREAM ERROR] ${channel.name}`, err.message);
 
     return res.json({ streams: [] });
-
   }
-
 });
 
-/* =========================================================
-   HOME
-========================================================= */
+/* ================= HOME ================= */
 
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
