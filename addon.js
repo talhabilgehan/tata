@@ -10,6 +10,7 @@ const {
 } = require("./parse-m3u");
 
 const { resolveChannel } = require("./providers/engine");
+const { proxyHandler } = require("./providers/proxy");
 
 const app = express();
 const PORT = process.env.PORT || 7000;
@@ -26,30 +27,55 @@ function absolute(req, url) {
 function assetPaths(name) {
   const encoded = encodeURIComponent(name);
 
-  const posterFile = path.join(__dirname, "public", "poster", `${name}.jpg`);
-  const clearFile = path.join(__dirname, "public", "clearlogos", `${name}.png`);
+  const posterFile = path.join(__dirname, "public/poster", `${name}.jpg`);
+  const clearFile = path.join(__dirname, "public/clearlogos", `${name}.png`);
 
   return {
     poster: fs.existsSync(posterFile)
       ? `/poster/${encoded}.jpg`
       : `/logos/${encoded}.png`,
+
     logo: fs.existsSync(clearFile)
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
   };
 }
 
+/* =========================================================
+   PROXY
+========================================================= */
+
+app.get("/proxy", proxyHandler);
+
+/* =========================================================
+   MANIFEST
+========================================================= */
+
 app.get("/manifest.json", (req, res) => {
+
   res.setHeader("Cache-Control", "no-store");
 
   res.json({
+
     id: "tata.live",
-    version: "2.1.0",
+    version: "3.0.0",
     name: "TATA",
     description: "Premium Live TV",
-    resources: ["catalog", "meta", "stream"],
-    types: ["tv"],
-    idPrefixes: ["tv-"],
+
+    resources: [
+      "catalog",
+      "meta",
+      "stream"
+    ],
+
+    types: [
+      "tv"
+    ],
+
+    idPrefixes: [
+      "tv-"
+    ],
+
     catalogs: [
       { type: "tv", id: "ulusal", name: "Ulusal" },
       { type: "tv", id: "spor", name: "Spor" },
@@ -57,8 +83,14 @@ app.get("/manifest.json", (req, res) => {
       { type: "tv", id: "belgesel", name: "Belgesel" },
       { type: "tv", id: "cocuk", name: "Çocuk" }
     ]
+
   });
+
 });
+
+/* =========================================================
+   CATALOG
+========================================================= */
 
 const catalogMap = {
   ulusal: "Ulusal",
@@ -69,26 +101,39 @@ const catalogMap = {
 };
 
 app.get("/catalog/tv/:id.json", (req, res) => {
+
   const groups = getGroups();
   const groupName = catalogMap[req.params.id];
 
   const metas = (groups[groupName] || []).map(channel => {
+
     const assets = assetPaths(channel.name);
 
     return {
+
       id: `tv-${channel.id}`,
       type: "tv",
       name: channel.name,
+
       poster: absolute(req, assets.poster),
       logo: absolute(req, assets.logo),
+
       posterShape: "square"
+
     };
+
   });
 
   res.json({ metas });
+
 });
 
+/* =========================================================
+   META
+========================================================= */
+
 app.get("/meta/tv/:id.json", (req, res) => {
+
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
 
@@ -99,51 +144,77 @@ app.get("/meta/tv/:id.json", (req, res) => {
   const assets = assetPaths(channel.name);
 
   res.json({
+
     meta: {
+
       id: `tv-${channel.id}`,
       type: "tv",
+
       name: channel.name,
       logo: absolute(req, assets.logo)
+
     }
+
   });
+
 });
 
+/* =========================================================
+   STREAM
+========================================================= */
+
 app.get("/stream/tv/:id.json", async (req, res) => {
+
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
 
   if (!channel) {
-    console.log(`[MISS] Kanal bulunamadı: ${id}`);
     return res.json({ streams: [] });
   }
 
-  console.log(`\n========== ${channel.name} ==========`);
-
   try {
+
     const result = await resolveChannel(id, channel.name);
 
     if (!result.stream) {
-      console.log(`[OFFLINE] ${channel.name}`);
       return res.json({ streams: [] });
     }
 
-    console.log(`[SOURCE] ${result.source}`);
-    console.log(`[URL] ${result.stream.url}`);
+    const stream = { ...result.stream };
 
-    const stream = {
-      ...result.stream,
-      title: `${channel.name} • ${result.source}`
-    };
+    if (result.source === "VAVOO" && stream.url) {
 
-    return res.json({
+      stream.url = absolute(
+        req,
+        `/proxy?url=${encodeURIComponent(stream.url)}`
+      );
+
+      delete stream.proxyHeaders;
+
+    }
+
+    stream.title = `${channel.name} • ${result.source}`;
+
+    res.json({
       streams: [stream]
     });
 
   } catch (err) {
-    console.log(`[ERROR] ${channel.name}: ${err.message}`);
-    return res.json({ streams: [] });
+
+    console.error(
+      `[STREAM ERROR] ${channel.name}:`,
+      err.message
+    );
+
+    res.json({ streams: [] });
+
   }
+
 });
+
+/* =========================================================
+   HOME
+========================================================= */
 
 app.get("/", (req, res) => {
   res.redirect("/manifest.json");
