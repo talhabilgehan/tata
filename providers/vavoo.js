@@ -1,41 +1,52 @@
-const axios = require("axios");
+const https = require("https");
 
 const BASE = "https://tvvoo.hayd.uk";
 
 const channelMap = new Map();
 let loaded = false;
 
+function getJSON(url) {
+    return new Promise((resolve, reject) => {
+        https.get(url, (res) => {
+            let data = "";
+
+            res.on("data", chunk => data += chunk);
+
+            res.on("end", () => {
+                try {
+                    resolve(JSON.parse(data));
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        }).on("error", reject);
+    });
+}
+
 async function loadCatalog() {
+
     if (loaded) return;
 
-    const res = await axios.get(
-        `${BASE}/catalog/tv/vavoo_tv_tr.json`,
-        { timeout: 10000 }
-    );
+    const data = await getJSON(`${BASE}/catalog/tv/vavoo_tv_tr.json`);
 
-    for (const ch of res.data.metas || []) {
+    for (const ch of data.metas || []) {
         channelMap.set(ch.name.toLowerCase(), ch.id);
     }
 
     loaded = true;
 }
 
-async function resolveVavoo(channelName) {
+async function resolveVavoo(name) {
 
     await loadCatalog();
 
-    const id = channelMap.get(channelName.toLowerCase());
+    const id = channelMap.get(name.toLowerCase());
 
     if (!id) return null;
 
-    const res = await axios.get(
-        `${BASE}/stream/tv/${id}.json`,
-        { timeout: 10000 }
-    );
+    const stream = await getJSON(`${BASE}/stream/tv/${id}.json`);
 
-    const stream = res.data.streams?.[0];
-
-    return stream ? stream.url : null;
+    return stream.streams?.[0]?.url || null;
 }
 
 module.exports = { resolveVavoo };
