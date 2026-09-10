@@ -1,22 +1,24 @@
 const axios = require("axios");
 
 async function isHealthy(url) {
-
     if (!url) return false;
 
     try {
-
         const res = await axios.get(url, {
-            timeout: 5000,
-            maxRedirects: 3
+            timeout: 10000,      // 10 saniye
+            maxRedirects: 3,
+            responseType: "text"
         });
 
-        return res.status === 200;
+        if (res.status !== 200) return false;
+
+        const body = res.data || "";
+
+        // HLS playlist doğrulaması
+        return body.includes("#EXTM3U");
 
     } catch {
-
         return false;
-
     }
 }
 
