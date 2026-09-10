@@ -1,10 +1,8 @@
 const https = require("https");
 const cache = require("./cache");
+const channelMap = require("./channelMap.json");
 
 const BASE = "https://tvvoo.hayd.uk";
-
-const channelMap = new Map();
-let catalogLoaded = false;
 
 function getJSON(url) {
   return new Promise((resolve, reject) => {
@@ -13,7 +11,7 @@ function getJSON(url) {
 
       let body = "";
 
-      res.on("data", c => body += c);
+      res.on("data", chunk => body += chunk);
 
       res.on("end", () => {
 
@@ -37,84 +35,31 @@ function getJSON(url) {
   });
 }
 
-function normalize(text) {
-
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^\w\s]/g, "")
-    .replace(/\s+/g, " ")
-    .trim();
-
-}
-
-async function loadCatalog() {
-
-  if (catalogLoaded) return;
-
-  const data = await getJSON(`${BASE}/catalog/tv/vavoo_tv_tr.json`);
-
-  for (const ch of data.metas || []) {
-
-    channelMap.set(normalize(ch.name), ch.id);
-
-  }
-
-  catalogLoaded = true;
-
-}
-
-function aliases(name) {
-
-  return [
-    name,
-    name.replace(/^NOW$/i, "FOX"),
-    name.replace(/^FOX$/i, "NOW"),
-    name.replace("CNN TÜRK", "CNN TURK"),
-    name.replace("TRT-1", "TRT 1"),
-    name.replace("A TV", "ATV"),
-    name.replace("TV 8", "TV8")
-  ];
-
-}
-
 async function resolveVavoo(name) {
 
   const cached = cache.get(name);
 
   if (cached) return cached;
 
-  await loadCatalog();
+  const id = channelMap[name];
 
-  for (const candidate of aliases(name)) {
-
-    const id = channelMap.get(normalize(candidate));
-
-    if (!id) continue;
-
-    // DİKKAT:
-    // id zaten encode edilmiş geliyor.
-    // Tekrar encode ETMİYORUZ.
-
-    const data = await getJSON(
-      `${BASE}/stream/tv/${id}.json`
-    );
-
-    if (data.streams?.length) {
-
-      const stream = data.streams[0];
-
-      cache.set(name, stream);
-
-      return stream;
-
-    }
-
+  if (!id) {
+    return null;
   }
 
-  return null;
+  const data = await getJSON(
+    `${BASE}/stream/tv/${id}.json`
+  );
 
+  if (!data.streams || !data.streams.length) {
+    return null;
+  }
+
+  const stream = data.streams[0];
+
+  cache.set(name, stream);
+
+  return stream;
 }
 
 module.exports = {
