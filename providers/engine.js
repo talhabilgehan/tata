@@ -28,7 +28,7 @@ async function tataTask(id) {
 async function vavooTask(name) {
   const stream = await Promise.race([
     resolveVavoo(name),
-    wait(3000).then(() => null)
+    wait(5000).then(() => null)
   ]);
 
   if (!stream) throw new Error("No VAVOO stream");
