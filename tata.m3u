@@ -1,201 +1,471 @@
 #EXTM3U
-#EXTINF:-1 tvg-id="TRT1.tr" tvg-name="TRT 1" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839124.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839124.png" tvg-chno="1" tvg-language="tur" tvg-country="TR",TRT 1
-http://schwarzer-1903.com:8080/yasarp/palaz07@/229
-#EXTINF:-1 tvg-id="ATV.tr" tvg-name="ATV" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838305.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838305.png" tvg-chno="2" tvg-language="tur" tvg-country="TR",ATV
-http://schwarzer-1903.com:8080/yasarp/palaz07@/231
-#EXTINF:-1 tvg-id="STAR.tr" tvg-name="STAR" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838418.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838418.png" tvg-chno="3" tvg-language="tur" tvg-country="TR",STAR
-http://schwarzer-1903.com:8080/yasarp/palaz07@/232
-#EXTINF:-1 tvg-id="SHOW.tr" tvg-name="SHOW" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839061.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839061.png" tvg-chno="4" tvg-language="tur" tvg-country="TR",SHOW
-http://schwarzer-1903.com:8080/yasarp/palaz07@/233
-#EXTINF:-1 tvg-id="KANALD.tr" tvg-name="KANAL D" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838833.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838833.png" tvg-chno="5" tvg-language="tur" tvg-country="TR",KANAL D
-http://schwarzer-1903.com:8080/yasarp/palaz07@/230
-#EXTINF:-1 tvg-id="NOW.tr" tvg-name="NOW" group-title="Ulusal" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838440.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838440.png" tvg-chno="6" tvg-language="tur" tvg-country="TR",NOW
-http://schwarzer-1903.com:8080/yasarp/palaz07@/234
-#EXTINF:-1 tvg-id="TV8.tr" tvg-name="TV8" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839104.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839104.png" tvg-chno="7" tvg-language="tur" tvg-country="TR",TV8
-http://schwarzer-1903.com:8080/yasarp/palaz07@/251
-#EXTINF:-1 tvg-id="TV85.tr" tvg-name="TV8.5" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839204.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839204.png" tvg-chno="8" tvg-language="tur" tvg-country="TR",TV8.5
-http://schwarzer-1903.com:8080/yasarp/palaz07@/222
-#EXTINF:-1 tvg-id="BEYAZ.tr" tvg-name="BEYAZ" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838801.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838801.png" tvg-chno="9" tvg-language="tur" tvg-country="TR",BEYAZ
-http://schwarzer-1903.com:8080/yasarp/palaz07@/237
-#EXTINF:-1 tvg-id="TV2.tr" tvg-name="TV2" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20260101999689.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20260101999689.png" tvg-chno="10" tvg-language="tur" tvg-country="TR",TV2
+#EXTINF:-1 tvg-name="TRT 1" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839124.png" group-title="Ulusal",TRT 1
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch831
+#EXTINF:-1 tvg-name="ATV" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838305.png" group-title="Ulusal",ATV
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch816
+#EXTINF:-1 tvg-name="STAR" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838418.png" group-title="Ulusal",STAR
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch826
+#EXTINF:-1 tvg-name="SHOW" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839061.png" group-title="Ulusal",SHOW
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch735
+#EXTINF:-1 tvg-name="KANAL D" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838833.png" group-title="Ulusal",KANAL D
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch734
+#EXTINF:-1 tvg-name="NOW" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838440.png" group-title="Ulusal",NOW
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch718
+#EXTINF:-1 tvg-name="TV8" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839104.png" group-title="Ulusal",TV8
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch825
+#EXTINF:-1 tvg-name="TV8.5" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839204.png" group-title="Ulusal",TV8.5
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch733
+#EXTINF:-1 tvg-name="BEYAZ" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838801.png" group-title="Ulusal",BEYAZ
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch739
+#EXTINF:-1 tvg-name="TV2" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20260101999689.png" group-title="Ulusal",TV2
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/257
-#EXTINF:-1 tvg-id="TLC.tr" tvg-name="TLC" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839056.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839056.png" tvg-chno="11" tvg-language="tur" tvg-country="TR",TLC
-http://schwarzer-1903.com:8080/yasarp/palaz07@/110605
-#EXTINF:-1 tvg-id="DMAX.tr" tvg-name="DMAX" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" tvg-chno="12" tvg-language="tur" tvg-country="TR",DMAX
-http://schwarzer-1903.com:8080/yasarp/palaz07@/67565
-#EXTINF:-1 tvg-id="FX.tr" tvg-name="FX" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838704.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838704.png" tvg-chno="13" tvg-language="tur" tvg-country="TR",FX
+#EXTINF:-1 tvg-name="TLC" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839056.png" group-title="Ulusal",TLC
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch745
+#EXTINF:-1 tvg-name="DMAX" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" group-title="Ulusal",DMAX
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch746
+#EXTINF:-1 tvg-name="FX" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838704.png" group-title="Ulusal",FX
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/120776
-#EXTINF:-1 tvg-id="A2.tr" tvg-name="A2" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837289.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837289.png" tvg-chno="14" tvg-language="tur" tvg-country="TR",A2
-http://schwarzer-1903.com:8080/yasarp/palaz07@/227
-#EXTINF:-1 tvg-id="KANAL7.tr" tvg-name="KANAL 7" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838695.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838695.png" tvg-chno="15" tvg-language="tur" tvg-country="TR",KANAL 7
-http://schwarzer-1903.com:8080/yasarp/palaz07@/238
-#EXTINF:-1 tvg-id="TRT4K.tr" tvg-name="TRT 4K" group-title="Ulusal" tvg-logo="https://cdn.creazilla.com/cliparts/7826858/trt-4k-logo-clipart-xl.png" tvg-clearlogo="https://cdn.creazilla.com/cliparts/7826858/trt-4k-logo-clipart-xl.png" tvg-chno="16" tvg-language="tur" tvg-country="TR",TRT 4K
-http://schwarzer-1903.com:8080/yasarp/palaz07@/245
-#EXTINF:-1 tvg-id="TRT2.tr" tvg-name="TRT 2" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839153.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839153.png" tvg-chno="17" tvg-language="tur" tvg-country="TR",TRT 2
-http://schwarzer-1903.com:8080/yasarp/palaz07@/215
-#EXTINF:-1 tvg-id="TRTAVAZ.tr" tvg-name="TRT AVAZ" group-title="Ulusal" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838660.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838660.png" tvg-chno="18" tvg-language="tur" tvg-country="TR",TRT AVAZ
-http://schwarzer-1903.com:8080/yasarp/palaz07@/110475
-#EXTINF:-1 tvg-id="TRTTRK.tr" tvg-name="TRT TüRK" group-title="Ulusal" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838728.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838728.png" tvg-chno="19" tvg-language="tur" tvg-country="TR",TRT TÜRK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/110478
-#EXTINF:-1 tvg-id="TRTHABER.tr" tvg-name="TRT HABER" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837609.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837609.png" tvg-chno="20" tvg-language="tur" tvg-country="TR",TRT HABER
-http://schwarzer-1903.com:8080/yasarp/palaz07@/418
-#EXTINF:-1 tvg-id="HABERTRK.tr" tvg-name="HABERTÜRK" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838714.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838714.png" tvg-chno="21" tvg-language="tur" tvg-country="TR",HABERTÜRK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/419
-#EXTINF:-1 tvg-id="CNNTRK.tr" tvg-name="CNN TÜRK" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838363.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838363.png" tvg-chno="22" tvg-language="tur" tvg-country="TR",CNN TÜRK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/423
-#EXTINF:-1 tvg-id="NTV.tr" tvg-name="NTV" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838399.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838399.png" tvg-chno="23" tvg-language="tur" tvg-country="TR",NTV
-http://schwarzer-1903.com:8080/yasarp/palaz07@/406
-#EXTINF:-1 tvg-id="AHABER.tr" tvg-name="A HABER" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838612.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838612.png" tvg-chno="24" tvg-language="tur" tvg-country="TR",A HABER
-http://schwarzer-1903.com:8080/yasarp/palaz07@/417
-#EXTINF:-1 tvg-id="HABERGLOBAL.tr" tvg-name="HABER GLOBAL" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838040.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838040.png" tvg-chno="25" tvg-language="tur" tvg-country="TR",HABER GLOBAL
-http://schwarzer-1903.com:8080/yasarp/palaz07@/422
-#EXTINF:-1 tvg-id="HALK.tr" tvg-name="HALK" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838585.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838585.png" tvg-chno="26" tvg-language="tur" tvg-country="TR",HALK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/415
-#EXTINF:-1 tvg-id="TELE1.tr" tvg-name="TELE 1" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839152.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839152.png" tvg-chno="27" tvg-language="tur" tvg-country="TR",TELE 1
+#EXTINF:-1 tvg-name="A2" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837289.png" group-title="Ulusal",A2
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch744
+#EXTINF:-1 tvg-name="KANAL 7" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838695.png" group-title="Ulusal",KANAL 7
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch814
+#EXTINF:-1 tvg-name="TRT 4K" tvg-logo="https://cdn.creazilla.com/cliparts/7826858/trt-4k-logo-clipart-xl.png" group-title="Ulusal",TRT 4K
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch786
+#EXTINF:-1 tvg-name="TRT 2" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839153.png" group-title="Ulusal",TRT 2
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch891
+#EXTINF:-1 tvg-name="TRT AVAZ" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838660.png" group-title="Ulusal",TRT AVAZ
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch747
+#EXTINF:-1 tvg-name="TRT TÜRK" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838728.png" group-title="Ulusal",TRT TÜRK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch808
+#EXTINF:-1 tvg-name="TRT HABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837609.png" group-title="Haber",TRT HABER
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch819
+#EXTINF:-1 tvg-name="HABERTÜRK" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838714.png" group-title="Haber",HABERTÜRK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch771
+#EXTINF:-1 tvg-name="CNN TÜRK" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838363.png" group-title="Haber",CNN TÜRK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch770
+#EXTINF:-1 tvg-name="NTV" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838399.png" group-title="Haber",NTV
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch813
+#EXTINF:-1 tvg-name="A HABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838612.png" group-title="Haber",A HABER
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch775
+#EXTINF:-1 tvg-name="HABER GLOBAL" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838040.png" group-title="Haber",HABER GLOBAL
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch772
+#EXTINF:-1 tvg-name="HALK" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838585.png" group-title="Haber",HALK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch802
+#EXTINF:-1 tvg-name="TELE 1" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839152.png" group-title="Haber",TELE 1
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/4812
-#EXTINF:-1 tvg-id="CNBCe.tr" tvg-name="CNBC-e" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20260323095389.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20260323095389.png" tvg-chno="28" tvg-language="tur" tvg-country="TR",CNBC-e
-http://schwarzer-1903.com:8080/yasarp/palaz07@/420801
-#EXTINF:-1 tvg-id="KRT.tr" tvg-name="KRT" group-title="Haber" tvg-logo="https://media.licdn.com/dms/image/v2/D4D22AQEW5TJZltwq_g/feedshare-image-high-res/feedshare-image-high-res/0/1708069310312?e=2147483647&v=beta&t=k1wpU_vqgstSWnliu5KKQO4P7_Knv0wI0ht3nrAov2s" tvg-clearlogo="https://media.licdn.com/dms/image/v2/D4D22AQEW5TJZltwq_g/feedshare-image-high-res/feedshare-image-high-res/0/1708069310312?e=2147483647&v=beta&t=k1wpU_vqgstSWnliu5KKQO4P7_Knv0wI0ht3nrAov2s" tvg-chno="29" tvg-language="tur" tvg-country="TR",KRT
-http://schwarzer-1903.com:8080/yasarp/palaz07@/416
-#EXTINF:-1 tvg-id="SZC.tr" tvg-name="SZC" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846143.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846143.png" tvg-chno="30" tvg-language="tur" tvg-country="TR",SZC
-http://schwarzer-1903.com:8080/yasarp/palaz07@/269066
-#EXTINF:-1 tvg-id="FLASHHABER.tr" tvg-name="FLASH HABER" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838624.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838624.png" tvg-chno="31" tvg-language="tur" tvg-country="TR",FLASH HABER
+#EXTINF:-1 tvg-name="CNBC-e" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20260323095389.png" group-title="Haber",CNBC-e
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch955
+#EXTINF:-1 tvg-name="KRT" tvg-logo="https://media.licdn.com/dms/image/v2/D4D22AQEW5TJZltwq_g/feedshare-image-high-res/feedshare-image-high-res/0/1708069310312?e=2147483647&v=beta&t=k1wpU_vqgstSWnliu5KKQO4P7_Knv0wI0ht3nrAov2s" group-title="Haber",KRT
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch773
+#EXTINF:-1 tvg-name="SZC" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846143.png" group-title="Haber",SZC
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch872
+#EXTINF:-1 tvg-name="FLASH HABER" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838624.png" group-title="Haber",FLASH HABER
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/277067
-#EXTINF:-1 tvg-id="LKE.tr" tvg-name="ÜLKE" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839331.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839331.png" tvg-chno="32" tvg-language="tur" tvg-country="TR",ÜLKE
-http://schwarzer-1903.com:8080/yasarp/palaz07@/401
-#EXTINF:-1 tvg-id="TV100.tr" tvg-name="TV 100" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839195.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839195.png" tvg-chno="33" tvg-language="tur" tvg-country="TR",TV 100
-http://schwarzer-1903.com:8080/yasarp/palaz07@/414
-#EXTINF:-1 tvg-id="BLOOMBERGHT.tr" tvg-name="BLOOMBERG HT" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801837595.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801837595.png" tvg-chno="34" tvg-language="tur" tvg-country="TR",BLOOMBERG HT
-http://schwarzer-1903.com:8080/yasarp/palaz07@/7554
-#EXTINF:-1 tvg-id="24.tr" tvg-name="24" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838386.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838386.png" tvg-chno="35" tvg-language="tur" tvg-country="TR",24
-http://schwarzer-1903.com:8080/yasarp/palaz07@/408
-#EXTINF:-1 tvg-id="TGRTHABER.tr" tvg-name="TGRT HABER" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801839201.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801839201.png" tvg-chno="36" tvg-language="tur" tvg-country="TR",TGRT HABER
+#EXTINF:-1 tvg-name="ÜLKE" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839331.png" group-title="Haber",ÜLKE
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch815
+#EXTINF:-1 tvg-name="TV 100" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839195.png" group-title="Haber",TV 100
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch738
+#EXTINF:-1 tvg-name="BLOOMBERG HT" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801837595.png" group-title="Haber",BLOOMBERG HT
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch922
+#EXTINF:-1 tvg-name="24" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838386.png" group-title="Haber",24
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch777
+#EXTINF:-1 tvg-name="TGRT HABER" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801839201.png" group-title="Haber",TGRT HABER
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/407
-#EXTINF:-1 tvg-id="TVNET.tr" tvg-name="TVNET" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839096.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839096.png" tvg-chno="37" tvg-language="tur" tvg-country="TR",TVNET
-http://schwarzer-1903.com:8080/yasarp/palaz07@/256
-#EXTINF:-1 tvg-id="APARA.tr" tvg-name="A PARA" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838741.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838741.png" tvg-chno="38" tvg-language="tur" tvg-country="TR",A PARA
-http://schwarzer-1903.com:8080/yasarp/palaz07@/410
-#EXTINF:-1 tvg-id="360.tr" tvg-name="360" group-title="Haber" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838188.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838188.png" tvg-chno="39" tvg-language="tur" tvg-country="TR",360
-http://schwarzer-1903.com:8080/yasarp/palaz07@/409
-#EXTINF:-1 tvg-id="EKOTRK.tr" tvg-name="EKOTÜRK" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838250.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838250.png" tvg-chno="40" tvg-language="tur" tvg-country="TR",EKOTÜRK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/123363
-#EXTINF:-1 tvg-id="ULUSALKANAL.tr" tvg-name="ULUSAL KANAL" group-title="Haber" tvg-logo="https://s.ulusal.com.tr/assets/web/images/logo.png" tvg-clearlogo="https://s.ulusal.com.tr/assets/web/images/logo.png" tvg-chno="41" tvg-language="tur" tvg-country="TR",ULUSAL KANAL
-http://schwarzer-1903.com:8080/yasarp/palaz07@/7548
-#EXTINF:-1 tvg-id="LDERHABER.tr" tvg-name="LİDER HABER" group-title="Haber" tvg-logo="https://liderhabercomtr.teimg.com/liderhaber-com-tr/uploads/2025/10/lider-logo-2025-ekim.png" tvg-clearlogo="https://liderhabercomtr.teimg.com/liderhaber-com-tr/uploads/2025/10/lider-logo-2025-ekim.png" tvg-chno="42" tvg-language="tur" tvg-country="TR",LİDER HABER
+#EXTINF:-1 tvg-name="TVNET" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839096.png" group-title="Haber",TVNET
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch780
+#EXTINF:-1 tvg-name="A PARA" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838741.png" group-title="Haber",A PARA
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch921
+#EXTINF:-1 tvg-name="360" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838188.png" group-title="Haber",360
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch742
+#EXTINF:-1 tvg-name="EKOTÜRK" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838250.png" group-title="Haber",EKOTÜRK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch776
+#EXTINF:-1 tvg-name="ULUSAL KANAL" tvg-logo="https://s.ulusal.com.tr/assets/web/images/logo.png" group-title="Haber",ULUSAL KANAL
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch774
+#EXTINF:-1 tvg-name="LİDER HABER" tvg-logo="https://liderhabercomtr.teimg.com/liderhaber-com-tr/uploads/2025/10/lider-logo-2025-ekim.png" group-title="Haber",LİDER HABER
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/472401
-#EXTINF:-1 tvg-id="EKOLTV.tr" tvg-name="EKOL TV" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838873.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838873.png" tvg-chno="43" tvg-language="tur" tvg-country="TR",EKOL TV
-http://schwarzer-1903.com:8080/yasarp/palaz07@/404559
-#EXTINF:-1 tvg-id="TRKHABER.tr" tvg-name="TÜRKHABER" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846223.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846223.png" tvg-chno="44" tvg-language="tur" tvg-country="TR",TÜRKHABER
+#EXTINF:-1 tvg-name="EKOL TV" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838873.png" group-title="Haber",EKOL TV
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch753
+#EXTINF:-1 tvg-name="TÜRKHABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846223.png" group-title="Haber",TÜRKHABER
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/185655
-#EXTINF:-1 tvg-id="ANEWS.tr" tvg-name="A NEWS" group-title="Haber" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838138.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838138.png" tvg-chno="45" tvg-language="tur" tvg-country="TR",A NEWS
+#EXTINF:-1 tvg-name="A NEWS" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838138.png" group-title="Haber",A NEWS
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/114816
-#EXTINF:-1 tvg-id="TRTWORLD.tr" tvg-name="TRT WORLD" group-title="Haber" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839162.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839162.png" tvg-chno="46" tvg-language="tur" tvg-country="TR",TRT WORLD
-http://schwarzer-1903.com:8080/yasarp/palaz07@/114832
-#EXTINF:-1 tvg-id="HTSPOR.tr" tvg-name="HT SPOR" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838378.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838378.png" tvg-chno="47" tvg-language="tur" tvg-country="TR",HT SPOR
-http://schwarzer-1903.com:8080/yasarp/palaz07@/601806
-#EXTINF:-1 tvg-id="EKOLSPORTS.tr" tvg-name="EKOL SPORTS" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250815850937.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250815850937.png" tvg-chno="48" tvg-language="tur" tvg-country="TR",EKOL SPORTS
+#EXTINF:-1 tvg-name="TRT WORLD" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839162.png" group-title="Haber",TRT WORLD
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch779
+#EXTINF:-1 tvg-name="HT SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838378.png" group-title="Spor",HT SPOR
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch954
+#EXTINF:-1 tvg-name="EKOL SPORTS" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250815850937.png" group-title="Spor",EKOL SPORTS
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/604625
-#EXTINF:-1 tvg-id="BEINSPORTSHABER.tr" tvg-name="BEIN SPORTS HABER" group-title="Spor" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sports-haber-tr.png" tvg-clearlogo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sports-haber-tr.png" tvg-chno="49" tvg-language="tur" tvg-country="TR",BEIN SPORTS HABER
-http://schwarzer-1903.com:8080/yasarp/palaz07@/114869
-#EXTINF:-1 tvg-id="BEINSPORTS1.tr" tvg-name="BEIN SPORTS 1" group-title="Spor" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" tvg-clearlogo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" tvg-chno="50" tvg-language="tur" tvg-country="TR",BEIN SPORTS 1
+#EXTINF:-1 tvg-name="BEIN SPORTS HABER" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sports-haber-tr.png" group-title="Spor",BEIN SPORTS HABER
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch751
+#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1
+
+
+
 http://tv.atomspor.workers.dev/?ID=bein-sports-1
-#EXTINF:-1 tvg-id="BEINSPORTS1.tr" tvg-name="BEIN SPORTS 1" group-title="Spor" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" tvg-clearlogo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" tvg-chno="51" tvg-language="tur" tvg-country="TR",BEIN SPORTS 1
+#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1 Alternatif
+
+
+
 https://cors-anywhere.yidianzhishi.cn/https://dga1op10s1u3leo.38f3bb9511487c.click/live/selcukbeinsports1/playlist.m3u8|referer=https://www.selcuksportshd1837.xyz/‎|user-agent=Dalvik/2.1.0 Mozilla/5.0 (m3u-ip.tv 2.2.4) Android
-#EXTINF:-1 tvg-id="BEINSPORTSXTRA.tr" tvg-name="BEIN SPORTS XTRA" group-title="Spor" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png/revision/latest?cb=20201108180658" tvg-clearlogo="https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png/revision/latest?cb=20201108180658" tvg-chno="52" tvg-language="tur" tvg-country="TR",BEIN SPORTS XTRA
-https://bein-esp-xumo.amagi.tv/playlistR1080p.m3u8
-#EXTINF:-1 tvg-id="TABSPOR.tr" tvg-name="TABİİ Spor" group-title="Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-clearlogo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-chno="53" tvg-language="tur" tvg-country="TR",TABİİ SPOR
+#EXTINF:-1 tvg-name="BEIN SPORTS 1" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 1 Alternatif 2
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch755
+#EXTINF:-1 tvg-name="BEIN SPORTS 2" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 2
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch756
+#EXTINF:-1 tvg-name="BEIN SPORTS 3" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-sport-1-hd.png" group-title="Spor",BEIN SPORTS 3
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch757
+#EXTINF:-1 tvg-name="BEIN SPORTS XTRA" tvg-logo="https://static.wikia.nocookie.net/logopedia/images/b/b5/XTRA_2.png/revision/latest?cb=20201108180658" group-title="Spor",BEIN SPORTS XTRA
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch828
+#EXTINF:-1 tvg-name="TABİİ Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/458357
-#EXTINF:-1 tvg-id="TABSPOR1.tr" tvg-name="TABİİ SPOR 1" group-title="Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-clearlogo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-chno="54" tvg-language="tur" tvg-country="TR",TABİİ SPOR 1
+#EXTINF:-1 tvg-name="TABİİ SPOR 1" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR 1
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/429633
-#EXTINF:-1 tvg-id="TABSPOR2.tr" tvg-name="TABİİ SPOR 2" group-title="Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-clearlogo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-chno="55" tvg-language="tur" tvg-country="TR",TABİİ SPOR 2
+#EXTINF:-1 tvg-name="TABİİ SPOR 2" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR 2
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/429634
-#EXTINF:-1 tvg-id="TABSPOR3.tr" tvg-name="TABİİ SPOR 3" group-title="Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-clearlogo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" tvg-chno="56" tvg-language="tur" tvg-country="TR",TABİİ SPOR 3
+#EXTINF:-1 tvg-name="TABİİ SPOR 3" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR 3
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/429635
-#EXTINF:-1 tvg-id="SSPORT.tr" tvg-name="S SPORT" group-title="Spor" tvg-logo="https://ssport.tv/assets/images/icons/logo.svg" tvg-clearlogo="https://ssport.tv/assets/images/icons/logo.svg" tvg-chno="57" tvg-language="tur" tvg-country="TR",S SPORT
-http://schwarzer-1903.com:8080/yasarp/palaz07@/305
-#EXTINF:-1 tvg-id="SSPORT2.tr" tvg-name="S SPORT 2" group-title="Spor" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/nrrvxp1643201048.png" tvg-clearlogo="https://r2.thesportsdb.com/images/media/channel/logo/nrrvxp1643201048.png" tvg-chno="58" tvg-language="tur" tvg-country="TR",S SPORT 2
+#EXTINF:-1 tvg-name="S SPORT" tvg-logo="https://ssport.tv/assets/images/icons/logo.svg" group-title="Spor",S SPORT
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch791
+#EXTINF:-1 tvg-name="S SPORT 2" tvg-logo="https://r2.thesportsdb.com/images/media/channel/logo/nrrvxp1643201048.png" group-title="Spor",S SPORT 2
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/295
-#EXTINF:-1 tvg-id="SSPORT.tr" tvg-name="S SPORT+" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/91/S_Sport_Plus_Logo.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/9/91/S_Sport_Plus_Logo.png" tvg-chno="59" tvg-language="tur" tvg-country="TR",S SPORT+
-http://schwarzer-1903.com:8080/yasarp/palaz07@/125107
-#EXTINF:-1 tvg-id="SPORTDIGITALFUSSBALL.tr" tvg-name="SPORT DIGITAL FUSSBALL" group-title="Spor" tvg-logo="https://epg.iptvx.one/picons/sportdigital-fussball.png" tvg-clearlogo="https://epg.iptvx.one/picons/sportdigital-fussball.png" tvg-chno="60" tvg-language="tur" tvg-country="TR",SPORT DIGITAL FUSSBALL
-http://schwarzer-1903.com:8080/yasarp/palaz07@/275452
-#EXTINF:-1 tvg-id="SPORTDIGITALEDGE.tr" tvg-name="SPORT DIGITAL EDGE" group-title="Spor" tvg-logo="https://epg.iptvx.one/picons/edgesport-de.png" tvg-clearlogo="https://epg.iptvx.one/picons/edgesport-de.png" tvg-chno="61" tvg-language="tur" tvg-country="TR",SPORT DIGITAL EDGE
-http://schwarzer-1903.com:8080/yasarp/palaz07@/362959
-#EXTINF:-1 tvg-id="TVBUSPOR.tr" tvg-name="TİVİBU SPOR" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839221.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839221.png" tvg-chno="62" tvg-language="tur" tvg-country="TR",TİVİBU SPOR
-http://schwarzer-1903.com:8080/yasarp/palaz07@/125109
-#EXTINF:-1 tvg-id="TVBUSPOR1.tr" tvg-name="TİVİBUSPOR 1" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839141.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839141.png" tvg-chno="63" tvg-language="tur" tvg-country="TR",TİVİBU SPOR 1
-http://schwarzer-1903.com:8080/yasarp/palaz07@/298
-#EXTINF:-1 tvg-id="TVBUSPOR2.tr" tvg-name="TiViBU SPOR 2" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839013.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839013.png" tvg-chno="64" tvg-language="tur" tvg-country="TR",TİVİBU SPOR 2
+#EXTINF: tvg-name="S SPORT+" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/9/91/S_Sport_Plus_Logo.png" group-title="Spor",S SPORT+
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch117
+#EXTINF:-1 tvg-name="TİVİBU SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839221.png" group-title="Spor",TİVİBU SPOR
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch797
+#EXTINF:-1 tvg-name="TİVİBUSPOR 1" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839141.png" group-title="Spor",TİVİBU SPOR 1
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch797
+#EXTINF:-1 tvg-name="TiViBU SPOR 2" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839013.png" group-title="Spor",TİVİBU SPOR 2
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/299
-#EXTINF:-1 tvg-id="TVBUSPOR3.tr" tvg-name="TiViBU SPOR 3" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837598.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837598.png" tvg-chno="65" tvg-language="tur" tvg-country="TR",TİVİBU SPOR 3
+#EXTINF:-1 tvg-name="TiViBU SPOR 3" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837598.png" group-title="Spor",TİVİBU SPOR 3
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/300
-#EXTINF:-1 tvg-id="SPORSMART.tr" tvg-name="SPORT SMART" group-title="Spor" tvg-logo="https://epg.iptvx.one/picons/spor-smart-tr.png" tvg-clearlogo="https://epg.iptvx.one/picons/spor-smart-tr.png" tvg-chno="66" tvg-language="tur" tvg-country="TR",SPOR SMART
-http://schwarzer-1903.com:8080/yasarp/palaz07@/297
-#EXTINF:-1 tvg-id="SPORSMART2.tr" tvg-name="SPORT SMART 2" group-title="Spor" tvg-logo="https://epg.iptvx.one/picons/spor-smart-2-tr.png" tvg-clearlogo="https://epg.iptvx.one/picons/spor-smart-2-tr.png" tvg-chno="67" tvg-language="tur" tvg-country="TR",SPOR SMART 2
-http://schwarzer-1903.com:8080/yasarp/palaz07@/302
-#EXTINF:-1 tvg-id="ASPOR.tr" tvg-name="A SPOR" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838287.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838287.png" tvg-chno="68" tvg-language="tur" tvg-country="TR",A SPOR
-http://schwarzer-1903.com:8080/yasarp/palaz07@/284
-#EXTINF:-1 tvg-id="TRTSPOR.tr" tvg-name="TRT SPOR" group-title="Spor" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839291.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839291.png" tvg-chno="69" tvg-language="tur" tvg-country="TR",TRT SPOR
-http://schwarzer-1903.com:8080/yasarp/palaz07@/114829
-#EXTINF:-1 tvg-id="TRTSPORYILDIZ.tr" tvg-name="TRT SPOR YILDIZ" group-title="Spor" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838619.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838619.png" tvg-chno="70" tvg-language="tur" tvg-country="TR",TRT SPOR YILDIZ
-http://schwarzer-1903.com:8080/yasarp/palaz07@/114887
-#EXTINF:-1 tvg-id="NBATV.tr" tvg-name="NBA TV" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/8/89/Nbatv.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/tr/8/89/Nbatv.png" tvg-chno="71" tvg-language="tur" tvg-country="TR",NBA TV
+#EXTINF:-1 tvg-name="SPORT SMART" tvg-logo="https://epg.iptvx.one/picons/spor-smart-tr.png" group-title="Spor",SPOR SMART
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch790
+#EXTINF:-1 tvg-name="SPORT SMART 2" tvg-logo="https://epg.iptvx.one/picons/spor-smart-2-tr.png" group-title="Spor",SPOR SMART 2
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch793
+#EXTINF:-1 tvg-name="A SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838287.png" group-title="Spor",A SPOR
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch822
+#EXTINF:-1 tvg-name="TRT SPOR" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839291.png" group-title="Spor",TRT SPOR
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch785
+#EXTINF:-1 tvg-name="TRT SPOR YILDIZ" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838619.png" group-title="Spor",TRT SPOR YILDIZ
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch749
+#EXTINF:-1 tvg-name="NBA TV" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/8/89/Nbatv.png" group-title="Spor",NBA TV
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/120783
-#EXTINF:-1 tvg-id="FIGHTBOX.tr" tvg-name="FIGHT BOX" group-title="Spor" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" tvg-clearlogo="https://epg.iptvx.one/picons/fightbox-hd.png" tvg-chno="72" tvg-language="tur" tvg-country="TR",FIGHT BOX
+#EXTINF:-1 tvg-name="FIGHT BOX" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" group-title="Spor",FIGHT BOX
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/362958
-#EXTINF:-1 tvg-id="EUROSPORT1.tr" tvg-name="EUROSPORT 1" group-title="Spor" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838605.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838605.png" tvg-chno="73" tvg-language="tur" tvg-country="TR",EUROSPORT 1
+#EXTINF:-1 tvg-name="EUROSPORT 1" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838605.png" group-title="Spor",EUROSPORT 1
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/275
-#EXTINF:-1 tvg-id="EUROSPORT2.tr" tvg-name="EUROSPORT 2" group-title="Spor" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837058.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837058.png" tvg-chno="74" tvg-language="tur" tvg-country="TR",EUROSPORT 2
+#EXTINF:-1 tvg-name="EUROSPORT 2" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837058.png" group-title="Spor",EUROSPORT 2
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/276
-#EXTINF:-1 tvg-id="CBCSPORT.tr" tvg-name="CBC SPORT" group-title="Spor" tvg-logo="https://epg.iptvx.one/picons/cbc-sport.png" tvg-clearlogo="https://epg.iptvx.one/picons/cbc-sport.png" tvg-chno="75" tvg-language="tur" tvg-country="TR",CBC SPORT
-http://schwarzer-1903.com:8080/yasarp/palaz07@/362962
-#EXTINF:-1 tvg-id="EXXEN1.tr" tvg-name="EXXEN 1" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="76" tvg-language="tur" tvg-country="TR",EXXEN 1
-http://schwarzer-1903.com:8080/yasarp/palaz07@/361629
-#EXTINF:-1 tvg-id="EXXEN2.tr" tvg-name="EXXEN 2" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="77" tvg-language="tur" tvg-country="TR",EXXEN 2
-http://schwarzer-1903.com:8080/yasarp/palaz07@/125073
-#EXTINF:-1 tvg-id="EXXEN3.tr" tvg-name="EXXEN 3" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="78" tvg-language="tur" tvg-country="TR",EXXEN 3
-http://schwarzer-1903.com:8080/yasarp/palaz07@/125857
-#EXTINF:-1 tvg-id="EXXEN4.tr" tvg-name="EXXEN 4" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="79" tvg-language="tur" tvg-country="TR",EXXEN 4
-http://schwarzer-1903.com:8080/yasarp/palaz07@/141719
-#EXTINF:-1 tvg-id="EXXEN5.tr" tvg-name="EXXEN 5" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="80" tvg-language="tur" tvg-country="TR",EXXEN 5
-http://schwarzer-1903.com:8080/yasarp/palaz07@/141720
-#EXTINF:-1 tvg-id="EXXEN6.tr" tvg-name="EXXEN 6" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="81" tvg-language="tur" tvg-country="TR",EXXEN 6
-http://schwarzer-1903.com:8080/yasarp/palaz07@/141721
-#EXTINF:-1 tvg-id="EXXEN7.tr" tvg-name="EXXEN 7" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="82" tvg-language="tur" tvg-country="TR",EXXEN 7
-http://schwarzer-1903.com:8080/yasarp/palaz07@/361631
-#EXTINF:-1 tvg-id="EXXEN8.tr" tvg-name="EXXEN 8" group-title="Spor" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" tvg-chno="83" tvg-language="tur" tvg-country="TR",EXXEN 8
-http://schwarzer-1903.com:8080/yasarp/palaz07@/141924
-#EXTINF:-1 tvg-id="NATIONALGEOGRAPHIC.tr" tvg-name="NATIONAL GEOGRAPHIC" group-title="Belgesel" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838068.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838068.png" tvg-chno="84" tvg-language="tur" tvg-country="TR",NATIONAL GEOGRAPHIC
+#EXTINF:-1 tvg-name="CBC SPORT" tvg-logo="https://epg.iptvx.one/picons/cbc-sport.png" group-title="Spor",CBC SPORT
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch782
+#EXTINF:-1 tvg-name="EXXEN 1" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" group-title="Spor",EXXEN 1
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch801
+#EXTINF:-1 tvg-name="NATIONAL GEOGRAPHIC" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838068.png" group-title="Belgesel",NATIONAL GEOGRAPHIC
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/17121
-#EXTINF:-1 tvg-id="NATGEOWILD.tr" tvg-name="NAT GEO WILD" group-title="Belgesel" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" tvg-chno="85" tvg-language="tur" tvg-country="TR",NAT GEO WILD
+#EXTINF:-1 tvg-name="NAT GEO WILD" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" group-title="Belgesel",NAT GEO WILD
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/486
-#EXTINF:-1 tvg-id="TRTBELGESEL.tr" tvg-name="TRT BELGESEL" group-title="Belgesel" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250328726039.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250328726039.png" tvg-chno="86" tvg-language="tur" tvg-country="TR",TRT BELGESEL
-http://schwarzer-1903.com:8080/yasarp/palaz07@/485
-#EXTINF:-1 tvg-id="DISCOVERYCHANNEL.tr" tvg-name="DISCOVERY CHANNEL" group-title="Belgesel" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838478.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838478.png" tvg-chno="87" tvg-language="tur" tvg-country="TR",DISCOVERY CHANNEL
+#EXTINF:-1 tvg-name="TRT BELGESEL" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250328726039.png" group-title="Belgesel",TRT BELGESEL
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch762
+#EXTINF:-1 tvg-name="DISCOVERY CHANNEL" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838478.png" group-title="Belgesel",DISCOVERY CHANNEL
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/488
-#EXTINF:-1 tvg-id="BBCEARTH.tr" tvg-name="BBC EARTH" group-title="Belgesel" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" tvg-chno="88" tvg-language="tur" tvg-country="TR",BBC EARTH
+#EXTINF:-1 tvg-name="BBC EARTH" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",BBC EARTH
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/110608
-#EXTINF:-1 tvg-id="BEINGURME.tr" tvg-name="BEIN GURME" group-title="Belgesel" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" tvg-clearlogo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" tvg-chno="89" tvg-language="tur" tvg-country="TR",BEIN GURME
+#EXTINF:-1 tvg-name="BEIN GURME" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" group-title="Belgesel",BEIN GURME
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/493
-#EXTINF:-1 tvg-id="BEINZ.tr" tvg-name="BEIN İZ" group-title="Belgesel" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" tvg-clearlogo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" tvg-chno="90" tvg-language="tur" tvg-country="TR",BEIN İZ
+#EXTINF:-1 tvg-name="BEIN İZ" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" group-title="Belgesel",BEIN İZ
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/18563
-#EXTINF:-1 tvg-id="24KITCHEN.tr" tvg-name="24KITCHEN" group-title="Belgesel" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" tvg-clearlogo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" tvg-chno="91" tvg-language="tur" tvg-country="TR",24KITCHEN
+#EXTINF:-1 tvg-name=24KITCHEN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" group-title="Belgesel",24KITCHEN
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/120765
-#EXTINF:-1 tvg-id="VIASATHISTORY.tr" tvg-name="VIASAT HISTORY" group-title="Belgesel" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" tvg-clearlogo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" tvg-chno="92" tvg-language="tur" tvg-country="TR",VIASAT HISTORY
+#EXTINF:-1 tvg-name="VIASAT HISTORY" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" group-title="Belgesel",VIASAT HISTORY
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/494
-#EXTINF:-1 tvg-id="YABAN.tr" tvg-name="TR: YABAN" group-title="Belgesel" tvg-logo="https://epg.iptvx.one/picons/yaban-tr.png" tvg-clearlogo="https://epg.iptvx.one/picons/yaban-tr.png" tvg-chno="93" tvg-language="tur" tvg-country="TR",YABAN
-http://schwarzer-1903.com:8080/yasarp/palaz07@/484
-#EXTINF:-1 tvg-id="LOVENATURE.tr" tvg-name="LOVE NATURE" group-title="Belgesel" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838892.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838892.png" tvg-chno="94" tvg-language="tur" tvg-country="TR",LOVE NATURE
+#EXTINF:-1 tvg-name="TR: YABAN" tvg-logo="https://epg.iptvx.one/picons/yaban-tr.png" group-title="Belgesel",YABAN
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch761
+#EXTINF:-1 tvg-name="LOVE NATURE" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838892.png" group-title="Belgesel",LOVE NATURE
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/110620
-#EXTINF:-1 tvg-id="TARHTV.tr" tvg-name="TARİH TV" group-title="Belgesel" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" tvg-chno="95" tvg-language="tur" tvg-country="TR",TARİH TV
+#EXTINF:-1 tvg-name="TARİH TV"tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" group-title="Belgesel",TARİH TV
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/110617
-#EXTINF:-1 tvg-id="TRTOCUK.tr" tvg-name="TRT ÇOCUK" group-title="Çocuk" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838766.png" tvg-clearlogo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838766.png" tvg-chno="96" tvg-language="tur" tvg-country="TR",TRT ÇOCUK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/429
-#EXTINF:-1 tvg-id="CARTOONNETWORK.tr" tvg-name="CARTOON NETWORK" group-title="Çocuk" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837565.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837565.png" tvg-chno="97" tvg-language="tur" tvg-country="TR",CARTOON NETWORK
-http://schwarzer-1903.com:8080/yasarp/palaz07@/426
-#EXTINF:-1 tvg-id="NICKELODEON.tr" tvg-name="NICKELODEON" group-title="Çocuk" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839001.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839001.png" tvg-chno="98" tvg-language="tur" tvg-country="TR",NICKELODEON
+#EXTINF:-1 tvg-name="TRT ÇOCUK" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838766.png" group-title="Çocuk",TRT ÇOCUK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch812
+#EXTINF:-1 tvg-name="CARTOON NETWORK" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837565.png" group-title="Çocuk",CARTOON NETWORK
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch768
+#EXTINF:-1 tvg-name="NICKELODEON" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839001.png" group-title="Çocuk",NICKELODEON
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/430
-#EXTINF:-1 tvg-id="MNKAGO.tr" tvg-name="MİNİKA GO" group-title="Çocuk" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838843.png" tvg-clearlogo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838843.png" tvg-chno="99" tvg-language="tur" tvg-country="TR",MİNİKA GO
-http://schwarzer-1903.com:8080/yasarp/palaz07@/438
-#EXTINF:-1 tvg-id="CARTOONITO.tr" tvg-name="CARTOONITO" group-title="Çocuk" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837853.png" tvg-clearlogo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837853.png" tvg-chno="100" tvg-language="tur" tvg-country="TR",CARTOONITO
+#EXTINF:-1 tvg-name="MİNİKA GO" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838843.png" group-title="Çocuk",MİNİKA GO
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch766
+#EXTINF:-1 tvg-name="CARTOONITO" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837853.png" group-title="Çocuk",CARTOONITO
+
+
+
 http://schwarzer-1903.com:8080/yasarp/palaz07@/437
+
