@@ -183,10 +183,12 @@ app.get("/stream/tv/:id.json", async (req, res) => {
 
     if (result.source === "VAVOO" && stream.url) {
 
-      stream.url = absolute(
-        req,
-        `/proxy?url=${encodeURIComponent(stream.url)}`
-      );
+return res.json({
+  streams: [{
+    ...result.stream,
+    title: `${channel.name} • ${result.source}`
+  }]
+});
 
       // TRUTH MODE:
       // proxyHeaders artık silinmiyor.
