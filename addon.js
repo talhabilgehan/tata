@@ -9,8 +9,7 @@ const {
   loadM3U
 } = require("./parse-m3u");
 
-const { resolveVavoo } = require("./providers/vavoo");
-const { isHealthy } = require("./providers/health");
+const { resolveChannel } = require("./providers/engine");
 
 const app = express();
 const PORT = process.env.PORT || 7000;
@@ -28,30 +27,26 @@ function assetPaths(name) {
   const encoded = encodeURIComponent(name);
 
   const posterFile = path.join(__dirname, "public", "poster", `${name}.jpg`);
-  const hasPoster = fs.existsSync(posterFile);
-
   const clearFile = path.join(__dirname, "public", "clearlogos", `${name}.png`);
-  const hasClear = fs.existsSync(clearFile);
 
   return {
-    poster: hasPoster
+    poster: fs.existsSync(posterFile)
       ? `/poster/${encoded}.jpg`
       : `/logos/${encoded}.png`,
-
-    logo: hasClear
+    logo: fs.existsSync(clearFile)
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
   };
 }
 
-// ================= MANIFEST =================
+// ---------- Manifest ----------
 
 app.get("/manifest.json", (req, res) => {
   res.setHeader("Cache-Control", "no-store");
 
   res.json({
     id: "tata.live",
-    version: "1.1.0",
+    version: "1.2.0",
     name: "TATA",
     description: "Premium Live TV",
 
@@ -74,7 +69,7 @@ app.get("/manifest.json", (req, res) => {
   });
 });
 
-// ================= CATALOG =================
+// ---------- Catalog ----------
 
 const catalogMap = {
   ulusal: "Ulusal",
@@ -85,12 +80,10 @@ const catalogMap = {
 };
 
 app.get("/catalog/tv/:id.json", (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
-
-  const groupName = catalogMap[req.params.id];
   const groups = getGroups();
+  const group = catalogMap[req.params.id];
 
-  const metas = (groups[groupName] || []).map(channel => {
+  const metas = (groups[group] || []).map((channel) => {
     const assets = assetPaths(channel.name);
 
     return {
@@ -106,13 +99,10 @@ app.get("/catalog/tv/:id.json", (req, res) => {
   res.json({ metas });
 });
 
-// ================= META =================
+// ---------- Meta ----------
 
 app.get("/meta/tv/:id.json", (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
-
-  const id = req.params.id.replace(/^tv-/, "");
-  const channel = getChannel(id);
+  const channel = getChannel(req.params.id.replace(/^tv-/, ""));
 
   if (!channel) {
     return res.status(404).json({ meta: null });
@@ -130,10 +120,9 @@ app.get("/meta/tv/:id.json", (req, res) => {
   });
 });
 
-// ================= STREAM =================
+// ---------- Stream ----------
 
 app.get("/stream/tv/:id.json", async (req, res) => {
-  res.setHeader("Cache-Control", "no-store");
 
   const id = req.params.id.replace(/^tv-/, "");
   const channel = getChannel(id);
@@ -142,40 +131,24 @@ app.get("/stream/tv/:id.json", async (req, res) => {
     return res.json({ streams: [] });
   }
 
-  let streamUrl = channel.stream;
-  let source = "TATA";
+  const result = await resolveChannel(id, channel.name);
 
-  try {
-    const healthy = await isHealthy(streamUrl);
-
-    if (!healthy) {
-      const vavooUrl = await resolveVavoo(channel.name);
-
-      if (vavooUrl) {
-        streamUrl = vavooUrl;
-        source = "VAVOO";
-      }
-    }
-  } catch (err) {
-    console.log(`[Fallback] ${channel.name}: ${err.message}`);
+  if (!result.url) {
+    return res.json({ streams: [] });
   }
 
   res.json({
     streams: [
       {
-        title: `${channel.name} • ${source}`,
-        url: streamUrl
+        title: `${channel.name} • ${result.source}`,
+        url: result.url
       }
     ]
   });
 });
 
-// ================= HOME =================
-
-app.get("/", (req, res) => {
-  res.redirect("/manifest.json");
-});
+app.get("/", (req, res) => res.redirect("/manifest.json"));
 
 app.listen(PORT, () => {
-  console.log(`TATA running on port ${PORT}`);
+  console.log(`TATA ${PORT}`);
 });
