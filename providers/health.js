@@ -1,25 +1,29 @@
-const axios = require("axios");
+const https = require("https");
 
 async function isHealthy(url) {
-    if (!url) return false;
+  if (!url) return false;
 
-    try {
-        const res = await axios.get(url, {
-            timeout: 10000,      // 10 saniye
-            maxRedirects: 3,
-            responseType: "text"
-        });
+  return new Promise((resolve) => {
+    const req = https.get(url, { timeout: 10000 }, (res) => {
+      let body = "";
 
-        if (res.status !== 200) return false;
+      res.on("data", (chunk) => (body += chunk));
 
-        const body = res.data || "";
+      res.on("end", () => {
+        resolve(
+          res.statusCode === 200 &&
+          body.includes("#EXTM3U")
+        );
+      });
+    });
 
-        // HLS playlist doğrulaması
-        return body.includes("#EXTM3U");
+    req.on("error", () => resolve(false));
 
-    } catch {
-        return false;
-    }
+    req.on("timeout", () => {
+      req.destroy();
+      resolve(false);
+    });
+  });
 }
 
 module.exports = { isHealthy };
