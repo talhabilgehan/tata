@@ -4,7 +4,6 @@ export default function handler(req, res) {
     version: "1.0.0",
     name: "TATA",
     description: "Premium Live TV",
-    logo: "https://tata-eosin.vercel.app/logo.png",
     resources: ["catalog", "stream"],
     types: ["tv"],
     catalogs: [
