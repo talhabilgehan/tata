@@ -28,70 +28,177 @@ function absolute(req, url) {
 function assetPaths(name) {
   const encoded = encodeURIComponent(name);
 
+  const posterFile = path.join(__dirname, "public", "poster", `${name}.jpg`);
+  const clearFile = path.join(__dirname, "public", "clearlogos", `${name}.png`);
+
   return {
-    poster: fs.existsSync(path.join(__dirname, "public", "poster", `${name}.jpg`))
+    poster: fs.existsSync(posterFile)
       ? `/poster/${encoded}.jpg`
       : `/logos/${encoded}.png`,
-    logo: fs.existsSync(path.join(__dirname, "public", "clearlogos", `${name}.png`))
+
+    logo: fs.existsSync(clearFile)
       ? `/clearlogos/${encoded}.png`
       : `/logos/${encoded}.png`
   };
 }
 
-// ---------- PROXY ----------
+/* =========================================================
+   PROXY
+========================================================= */
 
 app.get("/proxy", (req, res) => {
 
   const target = req.query.url;
 
   if (!target) {
-    return res.status(400).end("Missing url");
+    return res.status(400).send("Missing url");
   }
 
   const client = target.startsWith("https") ? https : http;
 
-  client.get(target, {
+  const proxyRequest = client.get(target, {
     headers: {
       "User-Agent":
-        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/116.0.0.0 Safari/537.36",
-      "Referer": "https://vavoo.to/"
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/138.0.0.0 Safari/537.36",
+      "Referer": "https://vavoo.to/",
+      "Origin": "https://vavoo.to"
     }
-  }, (r) => {
+  }, (response) => {
 
-    res.status(r.statusCode || 200);
+    const contentType = response.headers["content-type"] || "";
 
-    Object.entries(r.headers).forEach(([k, v]) => {
-      if (k.toLowerCase() !== "content-encoding") {
-        res.setHeader(k, v);
-      }
+    const isPlaylist =
+      contentType.includes("mpegurl") ||
+      target.includes(".m3u8");
+
+    if (!isPlaylist) {
+
+      res.status(response.statusCode || 200);
+
+      Object.entries(response.headers).forEach(([k, v]) => {
+        if (k.toLowerCase() !== "content-encoding") {
+          res.setHeader(k, v);
+        }
+      });
+
+      response.pipe(res);
+      return;
+    }
+
+    let body = "";
+
+    response.on("data", chunk => body += chunk);
+
+    response.on("end", () => {
+
+      const base = target.substring(0, target.lastIndexOf("/") + 1);
+
+      const rewritten = body
+        .split("\n")
+        .map(line => {
+
+          if (!line) return line;
+
+          if (line.startsWith("#EXT-X-KEY")) {
+
+            return line.replace(
+              /URI="([^"]+)"/,
+              (_, uri) => {
+
+                const absoluteKey = new URL(uri, base).toString();
+
+                return `URI="${absolute(req, `/proxy?url=${encodeURIComponent(absoluteKey)}`)}"`;
+              }
+            );
+          }
+
+          if (line.startsWith("#")) {
+            return line;
+          }
+
+          const absoluteSegment = new URL(line, base).toString();
+
+          return absolute(
+            req,
+            `/proxy?url=${encodeURIComponent(absoluteSegment)}`
+          );
+
+        })
+        .join("\n");
+
+      res.setHeader(
+        "Content-Type",
+        "application/vnd.apple.mpegurl"
+      );
+
+      res.send(rewritten);
+
     });
 
-    r.pipe(res);
+  });
 
-  }).on("error", () => {
+  proxyRequest.setTimeout(10000);
+
+  proxyRequest.on("timeout", () => {
+    proxyRequest.destroy();
+    res.status(504).end();
+  });
+
+  proxyRequest.on("error", () => {
     res.status(502).end();
   });
+
 });
 
-// ---------- MANIFEST ----------
+/* =========================================================
+   MANIFEST
+========================================================= */
 
 app.get("/manifest.json", (req, res) => {
+
+  res.setHeader("Cache-Control", "no-store");
+
   res.json({
+
     id: "tata.live",
-    version: "1.3.0",
+    version: "1.4.0",
     name: "TATA",
-    resources: ["catalog", "meta", "stream"],
-    types: ["tv"],
-    idPrefixes: ["tv-"],
+    description: "Premium Live TV",
+
+    resources: [
+      "catalog",
+      "meta",
+      "stream"
+    ],
+
+    types: [
+      "tv"
+    ],
+
+    idPrefixes: [
+      "tv-"
+    ],
+
     catalogs: [
       { type: "tv", id: "ulusal", name: "Ulusal" },
       { type: "tv", id: "spor", name: "Spor" },
       { type: "tv", id: "haber", name: "Haber" },
       { type: "tv", id: "belgesel", name: "Belgesel" },
       { type: "tv", id: "cocuk", name: "Çocuk" }
-    ]
+    ],
+
+    behaviorHints: {
+      configurable: false,
+      configurationRequired: false
+    }
+
   });
+
 });
+
+/* =========================================================
+   CATALOG
+========================================================= */
 
 const catalogMap = {
   ulusal: "Ulusal",
@@ -101,35 +208,42 @@ const catalogMap = {
   cocuk: "Çocuk"
 };
 
-// ---------- CATALOG ----------
-
 app.get("/catalog/tv/:id.json", (req, res) => {
 
   const groups = getGroups();
-  const group = catalogMap[req.params.id];
+  const groupName = catalogMap[req.params.id];
 
-  res.json({
-    metas: (groups[group] || []).map((c) => {
+  const metas = (groups[groupName] || []).map(channel => {
 
-      const assets = assetPaths(c.name);
+    const assets = assetPaths(channel.name);
 
-      return {
-        id: `tv-${c.id}`,
-        type: "tv",
-        name: c.name,
-        poster: absolute(req, assets.poster),
-        logo: absolute(req, assets.logo),
-        posterShape: "square"
-      };
-    })
+    return {
+
+      id: `tv-${channel.id}`,
+      type: "tv",
+      name: channel.name,
+
+      poster: absolute(req, assets.poster),
+      logo: absolute(req, assets.logo),
+
+      posterShape: "square"
+
+    };
+
   });
+
+  res.json({ metas });
+
 });
 
-// ---------- META ----------
+/* =========================================================
+   META
+========================================================= */
 
 app.get("/meta/tv/:id.json", (req, res) => {
 
-  const channel = getChannel(req.params.id.replace(/^tv-/, ""));
+  const id = req.params.id.replace(/^tv-/, "");
+  const channel = getChannel(id);
 
   if (!channel) {
     return res.status(404).json({ meta: null });
@@ -138,16 +252,24 @@ app.get("/meta/tv/:id.json", (req, res) => {
   const assets = assetPaths(channel.name);
 
   res.json({
+
     meta: {
+
       id: `tv-${channel.id}`,
       type: "tv",
+
       name: channel.name,
       logo: absolute(req, assets.logo)
+
     }
+
   });
+
 });
 
-// ---------- STREAM ----------
+/* =========================================================
+   STREAM
+========================================================= */
 
 app.get("/stream/tv/:id.json", async (req, res) => {
 
@@ -158,29 +280,54 @@ app.get("/stream/tv/:id.json", async (req, res) => {
     return res.json({ streams: [] });
   }
 
-  const result = await resolveChannel(id, channel.name);
+  console.log(`[STREAM] ${channel.name}`);
 
-  if (!result.stream) {
+  try {
+
+    const result = await resolveChannel(id, channel.name);
+
+    if (!result.stream) {
+      console.log(`[OFFLINE] ${channel.name}`);
+      return res.json({ streams: [] });
+    }
+
+    const stream = { ...result.stream };
+
+    if (result.source === "VAVOO" && stream.url) {
+
+      stream.url = absolute(
+        req,
+        `/proxy?url=${encodeURIComponent(stream.url)}`
+      );
+
+    }
+
+    stream.title = `${channel.name} • ${result.source}`;
+
+    console.log(`[${result.source}] ${channel.name}`);
+
+    return res.json({
+      streams: [stream]
+    });
+
+  } catch (err) {
+
+    console.error(`[STREAM ERROR] ${channel.name}`, err.message);
+
     return res.json({ streams: [] });
+
   }
-
-  const stream = { ...result.stream };
-
-  if (result.source === "VAVOO") {
-    stream.url = absolute(
-      req,
-      `/proxy?url=${encodeURIComponent(stream.url)}`
-    );
-  }
-
-  stream.title = `${channel.name} • ${result.source}`;
-
-  res.json({ streams: [stream] });
 
 });
 
-app.get("/", (_, res) => res.redirect("/manifest.json"));
+/* =========================================================
+   HOME
+========================================================= */
+
+app.get("/", (req, res) => {
+  res.redirect("/manifest.json");
+});
 
 app.listen(PORT, () => {
-  console.log(`TATA ${PORT}`);
+  console.log(`TATA running on port ${PORT}`);
 });
