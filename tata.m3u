@@ -84,16 +84,11 @@ https://tv-trtturk.medya.trt.com.tr/master.m3u8
 
 
 http://umperisn.mywire.org/index.php?id=1842&token=DeaTHLesS
-#EXTINF:-1 tvg-name="DMAX" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" group-title="Ulusal",DMAX
-
-
-
-mode=proxy&url=http://65.108.239.207/dmax/index.m3u8
 #EXTINF:-1 tvg-name="FX" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838704.png" group-title="Ulusal",FX
 
 
 
-http://stream.mcquack.net/232/index.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2975
 #EXTINF:-1 tvg-name="TRT HABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837609.png" group-title="Haber",TRT HABER
 
 
@@ -323,7 +318,7 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch793
 
 
 
-https://7pal.short.gy/nbatvus
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/7427
 #EXTINF:-1 tvg-name="FIGHT BOX" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" group-title="Spor",FIGHT BOX
 
 
@@ -333,12 +328,12 @@ https://dsmartgo-live.ercdn.net/fightbox/fightbox.m3u8
 
 
 
-https://dsmartgo-live.ercdn.net/eurosport1/eurosport1.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2989
 #EXTINF:-1 tvg-name="EUROSPORT 2" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837058.png" group-title="Spor",EUROSPORT 2
 
 
 
-https://dsmartgo-live.ercdn.net/eurosport2/eurosport2.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2988
 #EXTINF:-1 tvg-name="CBC SPORT" tvg-logo="https://epg.iptvx.one/picons/cbc-sport.png" group-title="Spor",CBC SPORT
 
 
@@ -363,7 +358,7 @@ https://amg00090-blueantmedia-naturetime-samsungfr-yakbf.amagi.tv/ts-eu-w1-n2/pl
 
 
 
-https://saran-live.ercdn.net/natgeohd/index.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2902
 #EXTINF:-1 tvg-name="NAT GEO WILD" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" group-title="Belgesel",NAT GEO WILD
 
 
@@ -373,37 +368,47 @@ https://aegis-cloudfront-1.tubi.video/bb1fc6ad-9948-42ea-aaf3-20acfcdeecac/playl
 
 
 
-https://dsmartgo-live.ercdn.net/discoverychannel/discoverychannel.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/3004
 #EXTINF:-1 tvg-name="BBC EARTH" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",BBC EARTH
 
 
 
-https://mss.ayakkabiparti.lol/bbc/index.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/99747
+#EXTINF:-1 tvg-name="LOVE NATURE" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",LOVE NATURE
+
+
+
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2904
 #EXTINF:-1 tvg-name="VIASAT HISTORY" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" group-title="Belgesel",VIASAT HISTORY
 
 
 
-http://66capanoglu.com:8080/live/zehra@senol/15082022/784.ts
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/147434
 #EXTINF:-1 tvg-name="24KITCHEN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" group-title="Belgesel",24KITCHEN
 
 
 
-http://schwarzer-1903.com:8080/yasarp/palaz07@/120765
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/7673
+#EXTINF:-1 tvg-name="DMAX" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" group-title="Belgesel",DMAX
+
+
+
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/31320
 #EXTINF:-1 tvg-name="BEIN GURME" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" group-title="Belgesel",BEIN GURME
 
 
 
-https://vavoo.biz-az.workers.dev/play/9503946568377e1ba14c8.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/31314
 #EXTINF:-1 tvg-name="BEIN İZ" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" group-title="Belgesel",BEIN İZ
 
 
 
-http://schwarzer-1903.com:8080/yasarp/palaz07@/18563
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/3047
 #EXTINF:-1 tvg-name="TARİH TV"tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" group-title="Belgesel",TARİH TV
 
 
 
-https://mjkskdvpfpb1fbv.ngolpdkyoctjcddxshli469r.org/sunshine/dIajGY0mp3rfG6nTFwHdd5g06JOMlWRCBwP9SgjfJjNs0eBUhNeNIUyoajg0tj5tZgR-MHyKmtOtLriYrkto1YF3vawb7tDGDkLsT92CfGrfeAsMxPjylncuzVsOVdl6ERZuArcBkhuXhh84AgwNDnAllFSqXCHNRVNcdYqvRVejROOrmJCeCDIwKvUYFQNRlzUObuizqsXi724_Ogou4_Q2Z7bdiVpp0_9YPju603WerPvxjLbr-9O5uin_0UAIBtwx3lJHQEsziXB-nAl0vBC1vep9Qf5tF0dqX4Pw7e4/hls/index.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/170403
 #EXTINF:-1 tvg-name="TRT ÇOCUK" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838766.png" group-title="Çocuk",TRT ÇOCUK
 
 
@@ -428,5 +433,9 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/minikago/minikago_720p.m3u8
 
 
 
-http://463758a0.ucomist.net/iptv/V4ZVP6G52HVXDE/6850/index.m3u8
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/170410
+#EXTINF:-1 tvg-name="NICKELODEON" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837853.png" group-title="Çocuk",NICKELODEON
 
+
+
+http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2900
