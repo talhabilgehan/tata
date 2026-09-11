@@ -52,7 +52,7 @@ app.get("/manifest.json", (req, res) => {
     name: "TATA",
     description: "Live TV",
 
-    resources: ["Ulusal", "Spor", "Haber", "Belgesel", "Çocuk"],
+    resources: ["Ulusal" "Spor" "Haber" "Belgesel" "Çocuk" "Kanalları"],
 
 
     catalogs: [
