@@ -50,10 +50,11 @@ app.get("/manifest.json", (req, res) => {
     id: "tata.live",
     version: "4.0.0",
     name: "TATA",
-    description: "Live TV",
+    description: "Premium Live TV",
 
-    resources: ["Ulusal" "Spor" "Haber" "Belgesel" "Çocuk" "Kanalları"],
-
+    resources: ["catalog", "meta", "stream"],
+    types: ["tv"],
+    idPrefixes: ["tv-"],
 
     catalogs: [
       { type: "tv", id: "ulusal", name: "Ulusal" },
