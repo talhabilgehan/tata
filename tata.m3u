@@ -64,11 +64,6 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8
 
 
 https://kanal7-live.daioncdn.net/kanal7/kanal7_1080p.m3u8
-#EXTINF:-1 tvg-name="TRT 2" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839153.png" group-title="Ulusal",TRT 2
-
-
-
-http://umperisn.mywire.org/index.php?id=1846&token=DeaTHLesS
 #EXTINF:-1 tvg-name="TRT AVAZ" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838660.png" group-title="Ulusal",TRT AVAZ
 
 
@@ -88,7 +83,7 @@ http://umperisn.mywire.org/index.php?id=1842&token=DeaTHLesS
 
 
 
-http://82.70.45.131/Dady.php?ID=317
+http://88.99.165.164:6878/ace/getstream?id=ba95d17dc4f2c6710a5f42837f0fbbc023f710d2&pid=46724
 #EXTINF:-1 tvg-name="TRT HABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837609.png" group-title="Haber",TRT HABER
 
 
@@ -218,7 +213,12 @@ https://tv-trtworld.medya.trt.com.tr/master.m3u8
 
 
 
-https://tv-trtworld.medya.trt.com.tr/master.m3u8
+http://82.70.45.131/Dady.php?ID=345
+#EXTINF:-1 tvg-name="BBC NEWS" tvg-logo="https://logos-world.net/wp-content/uploads/2020/11/CNN-Logo.png" group-title="Haber",BBC NEWS
+
+
+
+http://82.70.45.131/Dady.php?ID=349
 #EXTINF:-1 tvg-name="A SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838287.png" group-title="Spor",A SPOR
 
 
@@ -318,7 +318,7 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch793
 
 
 
-http://82.70.45.131/Dady.php?ID=524
+http://82.70.45.131/Dady.php?ID=878
 #EXTINF:-1 tvg-name="EUROSPORT 2" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837058.png" group-title="Spor",EUROSPORT 2
 
 
@@ -329,11 +329,11 @@ http://82.70.45.131/Dady.php?ID=525
 
 
 http://82.70.45.131/Dady.php?ID=404
-#EXTINF:-1 tvg-name="FIGHT BOX" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" group-title="Spor",FIGHT BOX
+#EXTINF:-1 tvg-name="WWE" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" group-title="Spor",WWE
 
 
 
-http://82.70.45.131/Dady.php?ID=757
+http://82.70.45.131/Dady.php?ID=376
 #EXTINF:-1 tvg-name="CBC SPORT" tvg-logo="https://epg.iptvx.one/picons/cbc-sport.png" group-title="Spor",CBC SPORT
 
 
@@ -344,6 +344,11 @@ http://ios-byjj.onrender.com/TRiOS.php?ID=CBC Sport
 
 
 http://82.70.45.131/Uyan.php?ID=TRT Belgesel
+#EXTINF:-1 tvg-name="TRT 2" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839153.png" group-title="Belgesel",TRT 2
+
+
+
+http://umperisn.mywire.org/index.php?id=1846&token=DeaTHLesS
 #EXTINF:-1 tvg-name="YABAN" tvg-logo="https://epg.iptvx.one/picons/yaban-tr.png" group-title="Belgesel",YABAN
 
 
@@ -369,31 +374,21 @@ https://aegis-cloudfront-1.tubi.video/bb1fc6ad-9948-42ea-aaf3-20acfcdeecac/playl
 
 
 http://82.70.45.131/Dady.php?ID=313
-#EXTINF:-1 tvg-name="BBC EARTH" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",BBC EARTH
+#EXTINF:-1 tvg-name="ID" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",ID
 
 
 
-http://82.70.45.131/Dady.php?ID=349
+http://82.70.45.131/Dady.php?ID=324
 #EXTINF:-1 tvg-name="HISTORY CHANNEL" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" group-title="Belgesel",HISTORY CHANNEL
 
 
 
 http://82.70.45.131/Dady.php?ID=322
-#EXTINF:-1 tvg-name="VIASAT HISTORY" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" group-title="Belgesel",VIASAT HISTORY
-
-
-
-https://nord.ayakkabiparti.lol/viasathistory/index.m3u8
-#EXTINF:-1 tvg-name="24KITCHEN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" group-title="Belgesel",24KITCHEN
-
-
-
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/7673
 #EXTINF:-1 tvg-name="DMAX" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" group-title="Belgesel",DMAX
 
 
 
-https://yayin2.canlitv.fun/live/dmax.stream/chunklist_w394541911.m3u8?hash=84b300491454446924b46addf869b47f
+https://bstelevision.com/proxy.php?mode=proxy&url=http://65.108.239.207/dmax/index.m3u8
 #EXTINF:-1 tvg-name="TARİH TV"tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" group-title="Belgesel",TARİH TV
 
 
