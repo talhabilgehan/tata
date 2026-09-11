@@ -64,16 +64,6 @@ https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/a2tv/a2tv.m3u8
 
 
 https://kanal7-live.daioncdn.net/kanal7/kanal7_1080p.m3u8
-#EXTINF:-1 tvg-name="DMAX" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" group-title="Ulusal",DMAX
-
-
-
-mode=proxy&url=http://65.108.239.207/dmax/index.m3u8
-#EXTINF:-1 tvg-name="FX" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838704.png" group-title="Ulusal",FX
-
-
-
-http://stream.mcquack.net/232/index.m3u8
 #EXTINF:-1 tvg-name="TRT 2" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839153.png" group-title="Ulusal",TRT 2
 
 
@@ -94,6 +84,16 @@ https://tv-trtturk.medya.trt.com.tr/master.m3u8
 
 
 http://umperisn.mywire.org/index.php?id=1842&token=DeaTHLesS
+#EXTINF:-1 tvg-name="DMAX" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801837556.png" group-title="Ulusal",DMAX
+
+
+
+mode=proxy&url=http://65.108.239.207/dmax/index.m3u8
+#EXTINF:-1 tvg-name="FX" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838704.png" group-title="Ulusal",FX
+
+
+
+http://stream.mcquack.net/232/index.m3u8
 #EXTINF:-1 tvg-name="TRT HABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837609.png" group-title="Haber",TRT HABER
 
 
