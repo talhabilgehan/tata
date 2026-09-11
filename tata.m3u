@@ -234,6 +234,21 @@ https://tv-trtworld.medya.trt.com.tr/master.m3u8
 
 
 https://tv-trtworld.medya.trt.com.tr/master.m3u8
+#EXTINF:-1 tvg-name="A SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838287.png" group-title="Spor",A SPOR
+
+
+
+https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8
+#EXTINF:-1 tvg-name="TRT SPOR" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839291.png" group-title="Spor",TRT SPOR
+
+
+
+http://ios-byjj.onrender.com/TRiOS.php?ID=TRT Spor
+#EXTINF:-1 tvg-name="TRT SPOR YILDIZ" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838619.png" group-title="Spor",TRT SPOR YILDIZ
+
+
+
+http://ios-byjj.onrender.com/TRiOS.php?ID=TRT Spor Yildiz
 #EXTINF:-1 tvg-name="HT SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838378.png" group-title="Spor",HT SPOR
 
 
@@ -274,11 +289,6 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch757
 
 
 https://square-leaf-d613.panorea1000.workers.dev/?xml=ch828
-#EXTINF:-1 tvg-name="TABİİ Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR
-
-
-
-https://betconnectstreamserver1001.site/tabii/index.m3u8
 #EXTINF:-1 tvg-name="S SPORT" tvg-logo="https://ssport.tv/assets/images/icons/logo.svg" group-title="Spor",S SPORT
 
 
@@ -299,6 +309,16 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch117
 
 
 https://square-leaf-d613.panorea1000.workers.dev/?xml=ch797
+#EXTINF:-1 tvg-name="TABİİ Spor" tvg-logo="https://izmottvsc24.tvplus.com.tr:33207/CPS/images/universal/film/logo/202409/20240913/4/1036095069015eb88428_op.png" group-title="Spor",TABİİ SPOR
+
+
+
+https://betconnectstreamserver1001.site/tabii/index.m3u8
+#EXTINF:-1 tvg-name="EXXEN SPOR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" group-title="Spor",EXXEN SPOR
+
+
+
+https://square-leaf-d613.panorea1000.workers.dev/?xml=ch801
 #EXTINF:-1 tvg-name="SPORT SMART" tvg-logo="https://epg.iptvx.one/picons/spor-smart-tr.png" group-title="Spor",SPOR SMART
 
 
@@ -309,21 +329,6 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch790
 
 
 https://square-leaf-d613.panorea1000.workers.dev/?xml=ch793
-#EXTINF:-1 tvg-name="A SPOR" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838287.png" group-title="Spor",A SPOR
-
-
-
-https://rnttwmjcin.turknet.ercdn.net/lcpmvefbyo/aspor/aspor.m3u8
-#EXTINF:-1 tvg-name="TRT SPOR" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839291.png" group-title="Spor",TRT SPOR
-
-
-
-http://ios-byjj.onrender.com/TRiOS.php?ID=TRT Spor
-#EXTINF:-1 tvg-name="TRT SPOR YILDIZ" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838619.png" group-title="Spor",TRT SPOR YILDIZ
-
-
-
-http://ios-byjj.onrender.com/TRiOS.php?ID=TRT Spor Yildiz
 #EXTINF:-1 tvg-name="NBA TV" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/8/89/Nbatv.png" group-title="Spor",NBA TV
 
 
@@ -349,11 +354,6 @@ https://dsmartgo-live.ercdn.net/eurosport2/eurosport2.m3u8
 
 
 http://ios-byjj.onrender.com/TRiOS.php?ID=CBC Sport
-#EXTINF:-1 tvg-name="EXXEN SPOR" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/d/db/Exxen.png" group-title="Spor",EXXEN SPOR
-
-
-
-https://square-leaf-d613.panorea1000.workers.dev/?xml=ch801
 #EXTINF:-1 tvg-name="NATIONAL GEOGRAPHIC" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838068.png" group-title="Belgesel",NATIONAL GEOGRAPHIC
 
 
