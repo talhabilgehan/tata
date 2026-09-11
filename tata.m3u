@@ -314,26 +314,26 @@ https://square-leaf-d613.panorea1000.workers.dev/?xml=ch790
 
 
 https://square-leaf-d613.panorea1000.workers.dev/?xml=ch793
-#EXTINF:-1 tvg-name="NBA TV" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/8/89/Nbatv.png" group-title="Spor",NBA TV
-
-
-
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/7427
-#EXTINF:-1 tvg-name="FIGHT BOX" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" group-title="Spor",FIGHT BOX
-
-
-
-https://dsmartgo-live.ercdn.net/fightbox/fightbox.m3u8
 #EXTINF:-1 tvg-name="EUROSPORT 1" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838605.png" group-title="Spor",EUROSPORT 1
 
 
 
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2989
+http://82.70.45.131/Dady.php?ID=524
 #EXTINF:-1 tvg-name="EUROSPORT 2" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801837058.png" group-title="Spor",EUROSPORT 2
 
 
 
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2988
+http://82.70.45.131/Dady.php?ID=525
+#EXTINF:-1 tvg-name="NBA TV" tvg-logo="https://upload.wikimedia.org/wikipedia/tr/8/89/Nbatv.png" group-title="Spor",NBA TV
+
+
+
+http://82.70.45.131/Dady.php?ID=404
+#EXTINF:-1 tvg-name="FIGHT BOX" tvg-logo="https://epg.iptvx.one/picons/fightbox-hd.png" group-title="Spor",FIGHT BOX
+
+
+
+http://82.70.45.131/Dady.php?ID=757
 #EXTINF:-1 tvg-name="CBC SPORT" tvg-logo="https://epg.iptvx.one/picons/cbc-sport.png" group-title="Spor",CBC SPORT
 
 
@@ -358,7 +358,7 @@ https://amg00090-blueantmedia-naturetime-samsungfr-yakbf.amagi.tv/ts-eu-w1-n2/pl
 
 
 
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2902
+http://82.70.45.131/Dady.php?ID=328
 #EXTINF:-1 tvg-name="NAT GEO WILD" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" group-title="Belgesel",NAT GEO WILD
 
 
@@ -368,12 +368,12 @@ https://aegis-cloudfront-1.tubi.video/bb1fc6ad-9948-42ea-aaf3-20acfcdeecac/playl
 
 
 
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/3004
+http://82.70.45.131/Dady.php?ID=313
 #EXTINF:-1 tvg-name="BBC EARTH" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",BBC EARTH
 
 
 
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/99747
+http://82.70.45.131/Dady.php?ID=349
 #EXTINF:-1 tvg-name="LOVE NATURE" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",LOVE NATURE
 
 
@@ -383,7 +383,7 @@ http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/2904
 
 
 
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/147434
+http://82.70.45.131/Dady.php?ID=322
 #EXTINF:-1 tvg-name="24KITCHEN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" group-title="Belgesel",24KITCHEN
 
 
@@ -394,16 +394,6 @@ http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/7673
 
 
 http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/31320
-#EXTINF:-1 tvg-name="BEIN GURME" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" group-title="Belgesel",BEIN GURME
-
-
-
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/31314
-#EXTINF:-1 tvg-name="BEIN İZ" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" group-title="Belgesel",BEIN İZ
-
-
-
-http://iptv.darktv.eu:80/Cigdem/c3WPPeRm/3047
 #EXTINF:-1 tvg-name="TARİH TV"tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" group-title="Belgesel",TARİH TV
 
 
