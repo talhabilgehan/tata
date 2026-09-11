@@ -109,11 +109,6 @@ https://tv.ensonhaber.com/haberturk/haberturk.m3u8
 
 
 http://izlego.minikirppis-com.workers.dev/ID=427315396743dfe9212c50
-#EXTINF:-1 tvg-name="NTV" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838399.png" group-title="Haber",NTV
-
-
-
-https://dogus.daioncdn.net/ntv/ntv.m3u8?app=7c4bb802-0c41-409e-8cd2-799984995694
 #EXTINF:-1 tvg-name="A HABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838612.png" group-title="Haber",A HABER
 
 
@@ -124,101 +119,96 @@ https://trkvz-live.ercdn.net/ahaberhd/ahaberhd.m3u8
 
 
 https://tv.ensonhaber.com/haberglobal/haberglobal.m3u8
-#EXTINF:-1 tvg-name="HALK" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838585.png" group-title="Haber",HALK
-
-
-
-https://halktv-live.daioncdn.net/halktv/halktv.m3u8
-#EXTINF:-1 tvg-name="TELE 1" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839152.png" group-title="Haber",TELE 1
-
-
-
-https://tele1-live.ercdn.net/tele1/tele1.m3u8
-#EXTINF:-1 tvg-name="CNBC-e" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20260323095389.png" group-title="Haber",CNBC-e
-
-
-
-https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8?tv=1
-#EXTINF:-1 tvg-name="KRT" tvg-logo="https://media.licdn.com/dms/image/v2/D4D22AQEW5TJZltwq_g/feedshare-image-high-res/feedshare-image-high-res/0/1708069310312?e=2147483647&v=beta&t=k1wpU_vqgstSWnliu5KKQO4P7_Knv0wI0ht3nrAov2s" group-title="Haber",KRT
-
-
-
-http://umperisn.mywire.org/index.php?id=594231&token=DeaTHLesS
-#EXTINF:-1 tvg-name="SZC" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846143.png" group-title="Haber",SZC
-
-
-
-http://82.70.45.131/Uyan.php?ID=Sozcu TV
-#EXTINF:-1 tvg-name="FLASH HABER" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838624.png" group-title="Haber",FLASH HABER
-
-
-
-https://b01c02nl.mediatriple.net/videoonlylive/mtyycglqauzjhlive/broadcast_67c053c48829f.smil/mt_0.m3u8
-#EXTINF:-1 tvg-name="ÜLKE" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839331.png" group-title="Haber",ÜLKE
-
-
-
-https://livetv.radyotvonline.net/kanal7live/ulketv/chunklist.m3u8
 #EXTINF:-1 tvg-name="TV 100" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801839195.png" group-title="Haber",TV 100
 
 
 
 http://82.70.45.131/Uyan.php?ID=TV 100
-#EXTINF:-1 tvg-name="BLOOMBERG HT" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801837595.png" group-title="Haber",BLOOMBERG HT
+#EXTINF:-1 tvg-name="NTV" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838399.png" group-title="Haber",NTV
 
 
 
-https://ciner.daioncdn.net/bloomberght/bloomberght.m3u8
-#EXTINF:-1 tvg-name="24" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838386.png" group-title="Haber",24
-
-
-
-https://turkmedya-live.ercdn.net/tv24/tv24_1080p.m3u8
+https://dogus.daioncdn.net/ntv/ntv.m3u8?app=7c4bb802-0c41-409e-8cd2-799984995694
 #EXTINF:-1 tvg-name="TGRT HABER" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801839201.png" group-title="Haber",TGRT HABER
 
 
 
 https://canli.tgrthaber.com/tgrt.m3u8
+#EXTINF:-1 tvg-name="ÜLKE" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839331.png" group-title="Haber",ÜLKE
+
+
+
+https://livetv.radyotvonline.net/kanal7live/ulketv/chunklist.m3u8
+#EXTINF:-1 tvg-name="24" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838386.png" group-title="Haber",24
+
+
+
+https://turkmedya-live.ercdn.net/tv24/tv24_1080p.m3u8
 #EXTINF:-1 tvg-name="TVNET" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839096.png" group-title="Haber",TVNET
 
 
 
 https://tvnet-live.lg.mncdn.com/tvnet/tvnet/chunklist.m3u8
-#EXTINF:-1 tvg-name="A PARA" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838741.png" group-title="Haber",A PARA
+#EXTINF:-1 tvg-name="CNBC-e" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20260323095389.png" group-title="Haber",CNBC-e
 
 
 
-http://c3921155.edmonst.net/iptv/AVNFCNQBEC9VQU/6909/index.m3u8
+https://hnpsechtsc.turknet.ercdn.net/xpnvudnlsv/cnbc-e/cnbc-e.m3u8?tv=1
 #EXTINF:-1 tvg-name="360" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838188.png" group-title="Haber",360
 
 
 
 https://turkmedya-live.ercdn.net/tv360/tv360_1080p.m3u8
-#EXTINF:-1 tvg-name="EKOTÜRK" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838250.png" group-title="Haber",EKOTÜRK
+#EXTINF:-1 tvg-name="HALK" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838585.png" group-title="Haber",HALK
 
 
 
-http://82.70.45.131/Uyan.php?ID=Ekoturk TV
+https://halktv-live.daioncdn.net/halktv/halktv.m3u8
+#EXTINF:-1 tvg-name="SZC" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846143.png" group-title="Haber",SZC
+
+
+
+http://82.70.45.131/Uyan.php?ID=Sozcu TV
+#EXTINF:-1 tvg-name="KRT" tvg-logo="https://media.licdn.com/dms/image/v2/D4D22AQEW5TJZltwq_g/feedshare-image-high-res/feedshare-image-high-res/0/1708069310312?e=2147483647&v=beta&t=k1wpU_vqgstSWnliu5KKQO4P7_Knv0wI0ht3nrAov2s" group-title="Haber",KRT
+
+
+
+http://umperisn.mywire.org/index.php?id=594231&token=DeaTHLesS
 #EXTINF:-1 tvg-name="ULUSAL KANAL" tvg-logo="https://s.ulusal.com.tr/assets/web/images/logo.png" group-title="Haber",ULUSAL KANAL
 
 
 
 https://internettv.guventechnology.com/hls/ulusaltv/index.m3u8
+#EXTINF:-1 tvg-name="FLASH HABER" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838624.png" group-title="Haber",FLASH HABER
+
+
+
+https://b01c02nl.mediatriple.net/videoonlylive/mtyycglqauzjhlive/broadcast_67c053c48829f.smil/mt_0.m3u8
 #EXTINF:-1 tvg-name="BENGÜTÜRK" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838732.png" group-title="Haber",BENGÜTÜRK
 
 
 
 https://tv.ensonhaber.com/benguturk/benguturk_720p.m3u8
-#EXTINF:-1 tvg-name="EKOL TV" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838873.png" group-title="Haber",EKOL TV
-
-
-
-https://square-leaf-d613.panorea1000.workers.dev/?xml=ch753
 #EXTINF:-1 tvg-name="TÜRKHABER" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250809846223.png" group-title="Haber",TÜRKHABER
 
 
 
 https://edge1.socialsmart.tv/turkhaber/bant1/playlist.m3u8
+#EXTINF:-1 tvg-name="BLOOMBERG HT" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801837595.png" group-title="Haber",BLOOMBERG HT
+
+
+
+https://ciner.daioncdn.net/bloomberght/bloomberght.m3u8
+#EXTINF:-1 tvg-name="A PARA" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838741.png" group-title="Haber",A PARA
+
+
+
+http://c3921155.edmonst.net/iptv/AVNFCNQBEC9VQU/6909/index.m3u8
+#EXTINF:-1 tvg-name="EKOTÜRK" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838250.png" group-title="Haber",EKOTÜRK
+
+
+
+http://82.70.45.131/Uyan.php?ID=Ekoturk TV
 #EXTINF:-1 tvg-name="A NEWS" tvg-logo="https://itv224226.tmp.tivibu.com.tr:6430/images/poster/20250801838138.png" group-title="Haber",A NEWS
 
 
@@ -354,51 +344,11 @@ https://dsmartgo-live.ercdn.net/eurosport2/eurosport2.m3u8
 
 
 http://ios-byjj.onrender.com/TRiOS.php?ID=CBC Sport
-#EXTINF:-1 tvg-name="NATIONAL GEOGRAPHIC" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838068.png" group-title="Belgesel",NATIONAL GEOGRAPHIC
-
-
-
-https://saran-live.ercdn.net/natgeohd/index.m3u8
-#EXTINF:-1 tvg-name="NAT GEO WILD" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" group-title="Belgesel",NAT GEO WILD
-
-
-
-https://aegis-cloudfront-1.tubi.video/bb1fc6ad-9948-42ea-aaf3-20acfcdeecac/playlist1080p.m3u8
 #EXTINF:-1 tvg-name="TRT BELGESEL" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250328726039.png" group-title="Belgesel",TRT BELGESEL
 
 
 
 http://82.70.45.131/Uyan.php?ID=TRT Belgesel
-#EXTINF:-1 tvg-name="DISCOVERY CHANNEL" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838478.png" group-title="Belgesel",DISCOVERY CHANNEL
-
-
-
-https://dsmartgo-live.ercdn.net/discoverychannel/discoverychannel.m3u8
-#EXTINF:-1 tvg-name="BBC EARTH" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",BBC EARTH
-
-
-
-https://mss.ayakkabiparti.lol/bbc/index.m3u8
-#EXTINF:-1 tvg-name="BEIN GURME" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" group-title="Belgesel",BEIN GURME
-
-
-
-https://vavoo.biz-az.workers.dev/play/9503946568377e1ba14c8.m3u8
-#EXTINF:-1 tvg-name="BEIN İZ" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" group-title="Belgesel",BEIN İZ
-
-
-
-http://schwarzer-1903.com:8080/yasarp/palaz07@/18563
-#EXTINF:-1 tvg-name="24KITCHEN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" group-title="Belgesel",24KITCHEN
-
-
-
-http://schwarzer-1903.com:8080/yasarp/palaz07@/120765
-#EXTINF:-1 tvg-name="VIASAT HISTORY" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" group-title="Belgesel",VIASAT HISTORY
-
-
-
-http://66capanoglu.com:8080/live/zehra@senol/15082022/784.ts
 #EXTINF:-1 tvg-name="YABAN" tvg-logo="https://epg.iptvx.one/picons/yaban-tr.png" group-title="Belgesel",YABAN
 
 
@@ -409,6 +359,46 @@ http://sewv654wfcsdwfi87fwvgbngh.siauliairsavlt.pw/iptv/LVFGLXHUW45A8PBECGUURD6K
 
 
 https://amg00090-blueantmedia-naturetime-samsungfr-yakbf.amagi.tv/ts-eu-w1-n2/playlist/amg00090-blueantmedia-naturetime-samsungfr/cb573f1f6573629098cf3a78d1f644826b371fde1d6988693eb5518975d1073edce2a59caa08ff16388f1ede7f0a66413a3e951fda77118fd87eb141453c5728cfffe729a2c05616b7db083429b56a062a866a68ac39437ed0e21f48a238b6720a5aa82a66443d80b846ac725adb80148b61299bce8c37683f03409a5e5afba358b381be1f018732beb018408b2f5be79c42dbc014ed87d50f9f46d36bf810c99bed8ad246839b986af850af320c5b277ccdd478c19b0de6e8780853e8199c82cc3496c2e99c6a19c4206459eaf2cab17c8d62a4eb00b410fb3f9dfa35e2159f79a519a29b3ec83f68112333508bc85f6429a2f0b28db9425b13d835c39bbf5d55e39a387750cc7f98112a209ff3d25ee3a970c4e072d7e73b5e5092e068087381971b9aad339b904dcdbf8e7d62040e21179452b29f22f92ccf74a1c029fe3d27a4ccb75ade8fd552312d1ac8d01e9c2412b7df8494cc4e15fe204a0aa630821b3265c2623827a535afce752ca8361a89300afe5a1e8956b3ed7fa2e988b346739ef6f36fd323afb903d9f3428e683f520dfab20f57574370d5a137596837930bb49d9aa1440806ede5c4b195006f496a41122284f0f37f95c1917d4558911d762e246262fc6ee160d10446173d894f83de6e5ab146707da8f7451e300ab1c7be868bd3b0349677c1c0f03c6f761954b43d012979c0f4ea7df82b406a754d8a6c3511eae73bce71127a83c4350994fa24e3d40fe9abde4e8315eb/127/1920x1080_4716800/index.m3u8
+#EXTINF:-1 tvg-name="NATIONAL GEOGRAPHIC" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838068.png" group-title="Belgesel",NATIONAL GEOGRAPHIC
+
+
+
+https://saran-live.ercdn.net/natgeohd/index.m3u8
+#EXTINF:-1 tvg-name="NAT GEO WILD" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801838637.png" group-title="Belgesel",NAT GEO WILD
+
+
+
+https://aegis-cloudfront-1.tubi.video/bb1fc6ad-9948-42ea-aaf3-20acfcdeecac/playlist1080p.m3u8
+#EXTINF:-1 tvg-name="DISCOVERY CHANNEL" tvg-logo="https://itv224234.tmp.tivibu.com.tr:6430/images/poster/20250801838478.png" group-title="Belgesel",DISCOVERY CHANNEL
+
+
+
+https://dsmartgo-live.ercdn.net/discoverychannel/discoverychannel.m3u8
+#EXTINF:-1 tvg-name="BBC EARTH" tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801836500.png" group-title="Belgesel",BBC EARTH
+
+
+
+https://mss.ayakkabiparti.lol/bbc/index.m3u8
+#EXTINF:-1 tvg-name="VIASAT HISTORY" tvg-logo="https://viasathistory.eu/wp-content/themes/viasat-world/logos/viasat-history.png" group-title="Belgesel",VIASAT HISTORY
+
+
+
+http://66capanoglu.com:8080/live/zehra@senol/15082022/784.ts
+#EXTINF:-1 tvg-name="24KITCHEN" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/8/89/24kitchen.png" group-title="Belgesel",24KITCHEN
+
+
+
+http://schwarzer-1903.com:8080/yasarp/palaz07@/120765
+#EXTINF:-1 tvg-name="BEIN GURME" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-gurme-hd-tr.png" group-title="Belgesel",BEIN GURME
+
+
+
+https://vavoo.biz-az.workers.dev/play/9503946568377e1ba14c8.m3u8
+#EXTINF:-1 tvg-name="BEIN İZ" tvg-logo="https://raw.githubusercontent.com/GitLatte/m3ueditor/refs/heads/site/images/kanal-gorselleri/turkiye/bein-iz-hd-tr.png" group-title="Belgesel",BEIN İZ
+
+
+
+http://schwarzer-1903.com:8080/yasarp/palaz07@/18563
 #EXTINF:-1 tvg-name="TARİH TV"tvg-logo="https://itv224186.tmp.tivibu.com.tr:6430/images/poster/20250801839171.png" group-title="Belgesel",TARİH TV
 
 
